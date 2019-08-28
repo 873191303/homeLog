@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto
+END
+AlarmDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/AlarmDTO.java
+END
+BehaviorDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/BehaviorDto.java
+END
+DictionariesDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/DictionariesDTO.java
+END
+UsergroupDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/UsergroupDTO.java
+END
+RoleDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/RoleDTO.java
+END
+LargeFileDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/LargeFileDTO.java
+END
+IpTopnDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/IpTopnDTO.java
+END
+ErrorLoginDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/ErrorLoginDTO.java
+END
+ARoleUserDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/ARoleUserDTO.java
+END
+BrasDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/BrasDTO.java
+END
+TmWebsiteDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/TmWebsiteDTO.java
+END
+UsergrpIspMstDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/UsergrpIspMstDTO.java
+END
+ResourcesDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/ResourcesDTO.java
+END
+IpDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/IpDTO.java
+END
+DataBaseTimeDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/DataBaseTimeDTO.java
+END
+HostDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/HostDTO.java
+END
+MonitorInfoDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/MonitorInfoDTO.java
+END
+UserDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/UserDTO.java
+END
+BrascityDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/BrascityDTO.java
+END
+ARoleResourcesDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dto/ARoleResourcesDTO.java
+END

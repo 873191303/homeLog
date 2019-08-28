@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/resources/ibatis
+END
+t_j_a_role_resources.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/t_j_a_role_resources.xml
+END
+host_inner_tbl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/host_inner_tbl.xml
+END
+large_file.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/large_file.xml
+END
+bras_tbl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/bras_tbl.xml
+END
+td_usergrp_isp_mst.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/td_usergrp_isp_mst.xml
+END
+host_outer_tbl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/host_outer_tbl.xml
+END
+t_j_resources.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/t_j_resources.xml
+END
+ip_tbl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/ip_tbl.xml
+END
+databasetime_tbl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/databasetime_tbl.xml
+END
+td_uas_iptopn.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/td_uas_iptopn.xml
+END
+t_j_user.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/t_j_user.xml
+END
+bcity_tbl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/bcity_tbl.xml
+END
+tm_usergroup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/tm_usergroup.xml
+END
+SqlMapConfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/SqlMapConfig.xml
+END
+alarm_tbl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/alarm_tbl.xml
+END
+behavior_tbl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/behavior_tbl.xml
+END
+error_login_tbl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/error_login_tbl.xml
+END
+dictionaries_tbl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/dictionaries_tbl.xml
+END
+tm_website.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/tm_website.xml
+END
+t_j_a_role_user.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/t_j_a_role_user.xml
+END
+t_j_role.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/resources/ibatis/t_j_role.xml
+END

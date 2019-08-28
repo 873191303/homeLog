@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	 
+	<bean id="userDao" class="com.jitv.tv.dao.impl.UserDaoImpl" />
+	 
+	<bean id="roleDao" class="com.jitv.tv.dao.impl.RoleDaoImpl" />
+	
+	<bean id="resourcesDao" class="com.jitv.tv.dao.impl.ResourcesDaoImpl" />
+	
+	<bean id="aroleUserDao" class="com.jitv.tv.dao.impl.ARoleUserDaoImpl" />
+	
+	<bean id="aroleResourcesDao" class="com.jitv.tv.dao.impl.ARoleResourcesDaoImpl" />
+	
+	<bean id="behaviorDao" class="com.jitv.tv.dao.impl.BehaviorDaoImpl" />
+	
+	<bean id="ipDao" class="com.jitv.tv.dao.impl.IpDaoImpl" />
+	
+	<bean id="dictionariesDao" class="com.jitv.tv.dao.impl.DictionariesDaoImpl" />
+	
+	<bean id="largeFileDao" class="com.jitv.tv.dao.impl.LargeFileDaoImpl" />
+	
+	<bean id="brasDao" class="com.jitv.tv.dao.impl.BrasDaoImpl" />
+	
+    <bean id="bras2cityDao" class="com.jitv.tv.dao.impl.Bras2cityDaoImpl" />
+    
+    <bean id="dataBaseTimeDao" class="com.jitv.tv.dao.impl.DataBaseTimeDaoImpl" />
+    
+	<bean id="hostInnerDao" class="com.jitv.tv.dao.impl.HostInnerDaoImpl"/>
+	
+	<bean id="hostOuterDao" class="com.jitv.tv.dao.impl.HostOuterDaoImpl"/>
+	
+	<bean id="usergrpIspMstDao" class="com.jitv.tv.dao.impl.UsergrpIspMstDaoImpl"/>
+	
+	<bean id="usergroupDao" class="com.jitv.tv.dao.impl.UsergroupDaoImpl"/>
+	
+	<bean id="tmWebsiteDao" class="com.jitv.tv.dao.impl.TmWebsiteDaoImpl"/>
+	
+	<bean id="errorLoginDao" class="com.jitv.tv.dao.impl.ErrorLoginDaoImpl"/>
+	
+	<bean id="ipTopnDao" class="com.jitv.tv.dao.impl.IpTopnDaoImpl"/>
+	
+	<bean id="alarmDao" class="com.jitv.tv.dao.impl.AlarmDaoImpl"/>
+	
+	
+	
+	<bean id="roleService" class="com.jitv.tv.service.impl.RoleServiceImpl">
+		<property name="roleDao" ref="roleDao" /> 
+		<property name="aroleUserService" ref="aroleUserService" /> 
+	</bean> 
+	
+	<bean id="resourcesService" class="com.jitv.tv.service.impl.ResourcesServiceImpl">
+		<property name="resourcesDao" ref="resourcesDao" /> 
+	</bean> 
+	
+	<bean id="aroleUserService" class="com.jitv.tv.service.impl.ARoleUserServiceImpl">
+		<property name="aroleUserDao" ref="aroleUserDao" /> 
+	</bean> 
+	
+	<bean id="aroleResourcesService" class="com.jitv.tv.service.impl.ARoleResourcesServiceImpl">
+		<property name="aroleResourcesDao" ref="aroleResourcesDao" /> 
+		<property name="resourcesDao" ref="resourcesDao" /> 
+	</bean> 
+	
+	<bean id="homeLogService" class="com.jitv.tv.service.impl.HomeLogServiceImpl">
+	<property name="userDao" ref="userDao" /> 
+	<property name="ipService" ref="ipService" /> 
+	</bean>
+	
+    <bean id="adminService" class="com.jitv.tv.service.impl.AdminServiceImpl">
+	   <property name="userDao" ref="userDao" /> 
+	   <property name="aroleUserDao" ref="aroleUserDao" /> 
+	   <property name="resourcesDao" ref="resourcesDao" /> 
+	   <property name="aroleResourcesDao" ref="aroleResourcesDao" />
+	   <property name="roleDao" ref="roleDao" /> 
+	   <property name="aroleUserService" ref="aroleUserService" /> 
+	   <property name="dictionariesDao" ref="dictionariesDao" />
+	</bean>
+	
+	<bean id="loginService" class="com.jitv.tv.service.impl.LoginServiceImpl">
+	 <property name="adminService" ref="adminService" />
+	<property name="userDao" ref="userDao" /> 
+	<property name="resourcesService" ref="resourcesService" />
+	<property name="errorLoginDao" ref="errorLoginDao" />
+	</bean>
+	
+	<bean id="userBusinessService" class="com.jitv.tv.service.impl.UserBusinessServiceImpl">
+	 <property name="ipTopnDao" ref="ipTopnDao" />
+	</bean>
+	<bean id="brasService" class="com.jitv.tv.service.impl.BrasServiceImpl">
+	 <property name="brasDao" ref="brasDao" />
+	 <property name="bras2cityDao" ref="bras2cityDao" />
+	</bean>
+	
+	<bean id="databaseService" class="com.jitv.tv.service.impl.DatabaseServiceImpl">
+	
+	</bean>
+	<bean id="sysNetworkService" class="com.jitv.tv.service.impl.SysNetworkServiceImpl">
+	 <property name="errorLoginDao" ref="errorLoginDao" />
+	 <property name="alarmDao" ref="alarmDao" />
+	</bean>
+	
+    <bean id="topStatisticsService" class="com.jitv.tv.service.impl.TopStatisticsServiceImpl">
+		<property name="hostInnerDao" ref="hostInnerDao" /> 
+		<property name="hostOuterDao" ref="hostOuterDao" /> 
+		<property name="usergrpIspMstDao" ref="usergrpIspMstDao" /> 
+		<property name="usergroupDao" ref="usergroupDao" /> 
+		<property name="tmWebsiteDao" ref="tmWebsiteDao" /> 
+		<property name="ipTopnDao" ref="ipTopnDao" /> 
+	</bean>
+	
+	<bean id="internetResourcesService" class="com.jitv.tv.service.impl.InternetResourcesServiceImpl">
+		<property name="hostInnerDao" ref="hostInnerDao" />
+		<property name="hostOuterDao" ref="hostOuterDao" />
+		<property name="usergrpIspMstDao" ref="usergrpIspMstDao" />
+		<property name="usergroupDao" ref="usergroupDao" />
+		<property name="largeFileDao" ref="largeFileDao" />
+		<property name="tmWebsiteDao" ref="tmWebsiteDao" />
+	</bean>
+	
+	<bean id="behaviorService" class="com.jitv.tv.service.impl.BehaviorServiceImpl">
+	<property name="behaviorDao" ref="behaviorDao" /> 
+	</bean>
+	
+	<bean id="ipService" class="com.jitv.tv.service.impl.IpServiceImpl">
+	<property name="ipDao" ref="ipDao" /> 
+	<property name="dictionariesDao" ref="dictionariesDao" /> 
+	</bean>
+	
+	<bean id="dictionariesService" class="com.jitv.tv.service.impl.DictionariesServiceImpl">
+	<property name="dictionariesDao" ref="dictionariesDao" /> 
+	</bean>
+	
+	<bean id="largeFileService" class="com.jitv.tv.service.impl.LargeFileServiceImpl">
+	<property name="largeFileDao" ref="largeFileDao" /> 
+	</bean>
+	
+	<bean id="dataBaseTimeService" class="com.jitv.tv.service.impl.DataBaseTimeServiceImpl">
+	<property name="dataBaseTimeDao" ref="dataBaseTimeDao" /> 
+	</bean>
+	
+<!-- 	<bean id="redisQueue" class="com.jitv.tv.service.impl.RedisQueue" scope="singleton"  init-method="pop"> -->
+	
+<!-- 	</bean> -->
+    <!-- 定时器启动 -->
+	<bean id="timer" class="com.jitv.tv.Ttmertask.HomeLogTimerTask" scope="singleton"  init-method="startTime">
+	
+	</bean>
+
+
+
+	 
+</beans>

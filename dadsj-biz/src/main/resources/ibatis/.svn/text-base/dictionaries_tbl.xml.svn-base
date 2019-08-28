@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="dictionaries_tbl">
+	
+	<insert id="add" parameterClass="_hashmap">
+	 INSERT INTO dictionaries_tbl (
+	 type,type_key,type_value,parent,other,create_time,updateTime,col
+	 )
+	 VALUES(
+	 #type#,#typeKey#,#typeValue#,#parent#,#other#,#createTime:TIMESTAMP#,#updateTime:TIMESTAMP#,
+	 #createTime:TIMESTAMP#,#COL#
+	 )
+	</insert>
+	
+	
+	<update id="update"  parameterClass="_hashmap">
+		update dictionaries_tbl
+		 <dynamic prepend="SET">  
+        <isNotEmpty property="id" prepend=","><![CDATA[ id = #id# ]]></isNotEmpty>  
+        <isNotEmpty property="type" prepend=","><![CDATA[ type = #type# ]]></isNotEmpty>  
+		<isNotEmpty property="typeKey" prepend=","><![CDATA[ type_key = #typeKey# ]]></isNotEmpty>  
+		<isNotEmpty property="typeValue" prepend=","><![CDATA[ type_value = #typeValue# ]]></isNotEmpty>  
+		<isNotEmpty property="parent" prepend=","><![CDATA[ parent = #parent# ]]></isNotEmpty>
+		<isNotEmpty property="other" prepend=","><![CDATA[ other = #other# ]]></isNotEmpty>  
+		<isNotEmpty property="createTime" prepend=","><![CDATA[ create_time = #createTime:TIMESTAMP# ]]></isNotEmpty>
+		<isNotEmpty property="updateTime" prepend=","><![CDATA[ update_time = #updateTime:TIMESTAMP# ]]></isNotEmpty> 
+		<isNotEmpty property="COL" prepend=","><![CDATA[ col = #COL# ]]></isNotEmpty>  
+	    </dynamic>
+	     <dynamic prepend="WHERE">  
+	        id = #id#  
+	    </dynamic>  
+	</update>
+	
+	
+	
+	
+	
+	
+	<select id="getSum" parameterClass="_hashmap" resultClass="Integer">
+		select count(id) from dictionaries_tbl 
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="id" prepend=","><![CDATA[ id = #id# ]]></isNotEmpty>  
+        <isNotEmpty property="type" prepend=","><![CDATA[ type = #type# ]]></isNotEmpty>  
+		<isNotEmpty property="typeKey" prepend=","><![CDATA[ type_key = #typeKey# ]]></isNotEmpty>  
+		<isNotEmpty property="typeValue" prepend=","><![CDATA[ type_value = #typeValue# ]]></isNotEmpty>  
+		<isNotEmpty property="parent" prepend=","><![CDATA[ parent = #parent# ]]></isNotEmpty>
+		<isNotEmpty property="other" prepend=","><![CDATA[ other = #other# ]]></isNotEmpty>  
+		<isNotEmpty property="createTime" prepend=","><![CDATA[ create_time = #createTime:TIMESTAMP# ]]></isNotEmpty>
+		<isNotEmpty property="updateTime" prepend=","><![CDATA[ update_time = #updateTime:TIMESTAMP# ]]></isNotEmpty> 
+		<isNotEmpty property="COL" prepend=","><![CDATA[ col = #COL# ]]></isNotEmpty>   
+	 	</dynamic>
+	</select>
+	
+	<select id="selBytypeKey" parameterClass="_hashmap" resultClass="_hashmap">
+	 select id,type,type_key as typeKey,type_value as typeValue,parent,other,create_time as createTime,update_time as updateTime,col
+	  from dictionaries_tbl where type_key = #typeKey# 
+	</select>
+		<select id="selBytypeValue" parameterClass="_hashmap" resultClass="_hashmap">
+	 select id,type,type_key as typeKey,type_value as typeValue,parent,other,create_time as createTime,update_time as updateTime,col
+	  from dictionaries_tbl where type_value = #typeValue# 
+	</select>
+    <select id="getAll" parameterClass="_hashmap" resultClass="_hashmap">
+	 select id,type,type_key as typeKey,type_value as typeValue,parent,other,create_time as createTime,update_time as updateTime,col
+	  from dictionaries_tbl
+	</select>
+	
+    <select id="getByIds" parameterClass="_hashmap" resultClass="List">
+	 select id,type,type_key as typeKey,type_value as typeValue,parent,other,create_time as createTime,update_time as updateTime,col
+	  from dictionaries_tbl where id in 
+       <iterate open="(" close=")" conjunction="," > 
+           #ids# 
+       </iterate> 
+	 
+	</select>
+	
+	<select id="getList" parameterClass="_hashmap" resultClass="_hashmap">
+		select id,type,type_key as typeKey,type_value as typeValue,parent,other,create_time as createTime,update_time as updateTime,col
+		 from dictionaries_tbl
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="id" prepend=","><![CDATA[ id = #id# ]]></isNotEmpty>  
+        <isNotEmpty property="type" prepend=","><![CDATA[ type = #type# ]]></isNotEmpty>  
+		<isNotEmpty property="typeKey" prepend=","><![CDATA[ type_key = #typeKey# ]]></isNotEmpty>  
+		<isNotEmpty property="typeValue" prepend=","><![CDATA[ type_value = #typeValue# ]]></isNotEmpty>  
+		<isNotEmpty property="parent" prepend=","><![CDATA[ parent = #parent# ]]></isNotEmpty>
+		<isNotEmpty property="other" prepend=","><![CDATA[ other = #other# ]]></isNotEmpty>  
+		<isNotEmpty property="createTime" prepend=","><![CDATA[ create_time = #createTime:TIMESTAMP# ]]></isNotEmpty>
+		<isNotEmpty property="updateTime" prepend=","><![CDATA[ update_time = #updateTime:TIMESTAMP# ]]></isNotEmpty> 
+		<isNotEmpty property="COL" prepend=","><![CDATA[ col = #COL# ]]></isNotEmpty> 
+	 	</dynamic>
+	  	order by id asc
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				 #pageSum# OFFSET #pageIndex# 
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<delete id="deleteById" parameterClass="_hashMap">
+		delete from dictionaries_tbl where id = #id#
+	</delete>
+	
+
+</sqlMap>

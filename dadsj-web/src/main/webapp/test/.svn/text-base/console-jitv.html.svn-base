@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="pragma" content="no-cache" /> 
+</head>
+<body>
+<script>
+var actions = new Array();
+
+actions["action/chat/content/selectList.action"]='{"requestId":"d07601c499625262f6dca7b7","clientId":"100012","contactUserId":"9525","groupIds":["6277069"]}';
+actions["action/chat/content/selectList.action"]='{"groupId":"8D8B213325184BEF960F1E03FEE71FF8","senderId":"15902069808"}';
+
+
+ 
+
+var actionNames = new Array();
+var i=0;
+for (var actionName in actions) {
+    actionNames[i] = actionName;
+    i++;
+}
+actionNames.sort();
+</script> 
+<table>
+	<tr>
+		<td align="right">Server：</td>
+		<td><input id="server" value=""
+			style="width: 700px" /></td>
+	</tr>
+	<tr>
+		<td align="right">Url：</td>
+		<td><input id="postUrl" value=""
+			style="width: 700px" /></td>
+	</tr>
+	<script language="javascript" type="text/javascript">
+		 var url = location.href;
+		 var si = url.indexOf("/", 8);
+		 var si2 = url.indexOf("/", si + 1);
+		// alert(si + ":" + si2);
+		 if (si2 > 0) {
+			document.getElementById("server").value = url.substring(0, si2 + 1);
+		 } else {
+			document.getElementById("server").value = "";
+		 } 
+	 </script>
+	<tr>
+		<td align="right" valign="top">Action：</td>
+		<td><input type="radio" name="type" value="1" checked
+			onclick="checkType()">ActionName： <select id="actionName"
+			onchange="actionNameChange()">
+			<script>
+	          for (var i=0;i<actionNames.length;i++) {      
+	          	document.write("<option value=\""+actionNames[i]+"\">"+actionNames[i]+"</option>");
+	          }
+	        </script>
+		</select><br>
+		</td>
+	</tr>
+		<form id="requestForm" method="post" target="resultFrame">
+	<tr>
+			<table><tr>
+			<td align="right" valign="top">Paras：</td>
+			<td><textarea id="jsonStr" name="jsonStr" style="width: 1000px; height: 100px; word-wrap: break-word; "></textarea></td></tr>
+			</table>
+	</tr>
+	<tr>
+		<td align="right" valign="top"></td>
+		<td><input type="button"
+			style="width: 300px; height: 40px; font-size: 30px;" value="提交(submit)"
+			onClick="go()"></td>
+	</tr>
+		</form>
+	<tr>
+		<td align="right" valign="top">Result:</td>
+		<td>
+		<div id="url" style="font-size: 12px"></div>
+		<form id="form" method="post" target="resultFrame">
+		</form>
+		<iframe name="resultFrame"
+			style="width: 1000px; height: 400px; border: 1px solid #000000; word-wrap: break-word;"></iframe>
+		</td>
+	</tr>
+</table>
+
+<script>
+function checkType(){
+    var type = getCheckedValue();
+    var paras = document.getElementById("jsonStr");
+    paras.disabled=false; 
+
+    if(type==2 || type==4){
+        paras.style.height="0px";
+        paras.disabled=true;
+    }else if(type==3){
+        paras.style.height="20px";
+    }else if(type==1){
+        paras.style.height="110px";
+    }
+}
+function getCheckedValue() {
+        var radioObj = document.getElementsByName("type");
+	if(!radioObj)
+		return "";
+	var radioLength = radioObj.length;
+	if(radioLength == undefined)
+		if(radioObj.checked)
+			return radioObj.value;
+		else
+			return "";
+	for(var i = 0; i < radioLength; i++) {
+		if(radioObj[i].checked) {
+			return radioObj[i].value;
+		}
+	}
+	return "";
+}
+function setCheckedValue(newValue) {
+        var radioObj = document.getElementsByName("type");
+	if(!radioObj)
+		return;
+	var radioLength = radioObj.length;
+	if(radioLength == undefined) {
+		radioObj.checked = (radioObj.value == newValue.toString());
+		return;
+	}
+	for(var i = 0; i < radioLength; i++) {
+		radioObj[i].checked = false;
+		if(radioObj[i].value == newValue.toString()) {
+			radioObj[i].checked = true;
+		}
+	}
+}
+
+
+function adminActionNameChange(){
+    setCheckedValue(3);
+    checkType();
+
+    var actionName = document.getElementById("adminActionName").value;
+    var jsonStr = adminActions[actionName]; 
+}
+function actionNameChange(){
+    setCheckedValue(1);
+    checkType();
+
+    var actionName = document.getElementById("actionName").value;
+	var serverUrl = document.getElementById("server").value;
+    var jsonStr = actions[actionName]; 
+    document.getElementById("jsonStr").value = jsonStr;
+	document.getElementById("postUrl").value = serverUrl+actionName;
+}
+function go(){
+    var server = document.getElementById("server").value;
+    
+    var jsonStr = document.getElementById("jsonStr").value;
+    //jsonStr = encodeURIComponent(jsonStr);
+    //jsonStr = jsonStr.replace(/\n/gi,'&');
+
+    //var kk = encodeURIComponent('#');
+    //jsonStr = jsonStr.replace(/#/gi,kk); 
+  
+
+
+    var form = document.getElementById("requestForm");
+
+    var url = "";
+    var type = getCheckedValue(); 
+
+    if(type==1 ){
+		//var actionName = document.getElementById("actionName").value;
+		// actionName = actionName+".json"
+	    url = document.getElementById('postUrl').value;
+	    document.getElementById("url").innerHTML=url;
+
+    }else if(type==3){
+		var actionName = document.getElementById("adminActionName").value;
+        url = server+actionName+"?"+jsonStr;
+        document.getElementById("url").innerHTML=url;
+
+    }else if(type==2){
+        url = server+"/r";
+        document.getElementById("url").innerHTML=url;
+    }else if(type==4){
+        url = server+"/reloadMemObjects?_domain=moc.931.eripsa&_reload=allConfig";
+        document.getElementById("url").innerHTML=url;
+
+    } 
+
+    form.action = url;  
+    form.submit();
+}
+
+function action(act){
+    var server = document.getElementById("server").value;
+    var url = server+"/fill?operation="+act;
+
+    if(act == 'insertActiveUser'){
+        var yesterday=document.getElementById("yesterday").value;
+	url = url+"&date="+yesterday;
+    }
+
+    if(act == 'fillCacheWithoutCare')
+    {
+        url = server+"/fill?operation=fillCache&withoutCare=true";
+    }
+
+    var form = document.getElementById("form");
+    document.getElementById("url").innerHTML=url;
+    form.action = url;
+    form.submit();
+}
+actionNameChange();
+</script>
+
+</body>
+</html>

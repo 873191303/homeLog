@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd"
+	default-lazy-init="false" default-autowire="byName">
+
+	<bean id="logger.mcloud" class="com.jitv.tv.web.McloudRpcEventLogger">
+
+	</bean>
+
+	<bean id="filter.mcloud" class="com.jitv.tv.web.McloudRpcFilter" />
+
+	<bean id="filter.mcloud.lists" class="com.aspire.commons.rpc.impl.LinkRpcFilter">
+		<property name="filters">
+			<util:list>
+				<ref bean="filter.mcloud" />
+			</util:list>
+		</property>
+	</bean>
+	<bean id="mcloud.controller" class="com.aspire.commons.rpc.impl.RpcControllerImpl">
+		<property name="rpcLogger" ref="logger.mcloud"></property>
+		<property name="rpcFilter" ref="filter.mcloud.lists"></property>
+		<property name="actionsList" ref="mcloud.actions"></property>
+	</bean>
+
+	<bean id="mcloud.rpc.cc" class="com.aspire.commons.rpc.ControllerContexts"
+		scope="singleton">
+		<property name="controller" ref="mcloud.controller"></property>
+	</bean>
+
+	<util:list id="mcloud.actions">
+		  
+		<ref bean="action.HomeLogAction" /> 
+		<ref bean="action.adminAction" /> 
+		<ref bean="action.RoleAction" /> 
+		<ref bean="action.ResourcesAction" /> 
+		<ref bean="action.LoginAction" />
+		<ref bean="action.UserBusinessAction" /> 
+		<ref bean="action.BrasAction" /> 
+		<ref bean="action.databaseConfigAction" /> 
+		<ref bean="action.SysNetworkAction" /> 
+		<ref bean="action.TopStatisticsAction" /> 
+		<ref bean="action.InternetResourcesAction" /> 
+		<ref bean="action.IpAction" />
+		<ref bean="action.DictionariesAction" />
+		
+	</util:list>
+	
+	  
+    <bean id="action.HomeLogAction" class="com.jitv.tv.action.HomeLogAction">
+        <property name="homeLogService" ref="homeLogService" />
+	</bean>
+	
+	<bean id="action.adminAction" class="com.jitv.tv.action.AdminAction">
+        <property name="adminService" ref="adminService" />
+        <property name="roleService" ref="roleService" />
+        <property name="aroleUserService" ref="aroleUserService" />
+        <property name="behaviorService" ref="behaviorService" />
+	</bean>
+
+	
+	
+	<bean id="action.RoleAction" class="com.jitv.tv.action.RoleAction">
+        <property name="roleService" ref="roleService" />
+        <property name="adminService" ref="adminService" />
+	</bean>
+	
+	<bean id="action.ResourcesAction" class="com.jitv.tv.action.ResourcesAction">
+        <property name="resourcesService" ref="resourcesService" /> 
+        <property name="aroleResourcesService" ref="aroleResourcesService" /> 
+	</bean>
+
+	
+	<bean id="action.LoginAction" class="com.jitv.tv.action.LoginAction">
+      <property name="loginService" ref="loginService" /> 
+	</bean>
+	
+	<bean id="action.UserBusinessAction" class="com.jitv.tv.action.UserBusinessAction">
+      <property name="userBusinessService" ref="userBusinessService" /> 
+	</bean>
+	
+	<bean id="action.BrasAction" class="com.jitv.tv.action.BrasAction">
+      <property name="brasService" ref="brasService" /> 
+	</bean>
+	
+	<bean id="action.databaseConfigAction" class="com.jitv.tv.action.DatabaseConfigAction">
+      <property name="databaseService" ref="databaseService" />
+      <property name="dataBaseTimeService" ref="dataBaseTimeService" />
+	</bean>
+	
+	<bean id="action.SysNetworkAction" class="com.jitv.tv.action.SysNetworkAction">
+      <property name="sysNetworkService" ref="sysNetworkService" /> 
+	</bean>
+	
+	<bean id="action.TopStatisticsAction" class="com.jitv.tv.action.TopStatisticsAction">
+      <property name="topStatisticsService" ref="topStatisticsService" /> 
+      <property name="largeFileService" ref="largeFileService" />
+	</bean>
+	
+	<bean id="action.InternetResourcesAction" class="com.jitv.tv.action.InternetResourcesAction">
+      <property name="internetResourcesService" ref="internetResourcesService" /> 
+	</bean>
+	
+	<bean id="action.IpAction" class="com.jitv.tv.action.IpAction">
+      <property name="ipService" ref="ipService" /> 
+	</bean>
+	
+	<bean id="action.DictionariesAction" class="com.jitv.tv.action.DictionariesAction">
+      <property name="dictionariesService" ref="dictionariesService" /> 
+	</bean>
+
+</beans>

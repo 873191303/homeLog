@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="host_outer_tbl">
+	
+	<insert id="add" parameterClass="_hashmap">
+	 INSERT INTO td_uas_host_outer (
+	 time,netid,usergrpid,direction,siteid,host,ipaddr,upbyte,dnbyte,count
+	 )
+	 VALUES(
+	 #time:TIMESTAMP#,#netid#,#usergrpid#,#direction#,#siteid#,#host#,#ipaddr#,#upbyte#,#dnbyte#,#count#
+	 )
+	</insert>
+	
+	
+	<update id="update"  parameterClass="_hashmap">
+		update td_uas_host_outer
+		 <dynamic prepend="SET">  
+            <isNotEmpty property="count" prepend=","><![CDATA[ count = #count# ]]></isNotEmpty>  
+	    </dynamic>
+	     <dynamic prepend="WHERE">
+	       <isNotEmpty property="host"  prepend="host"><![CDATA[ host = #host# ]]></isNotEmpty>  
+           <isNotEmpty property="time"  prepend="and"><![CDATA[ time = #time:TIMESTAMP# ]]></isNotEmpty> 
+	    </dynamic>  
+	</update>
+	
+	<select id="getSum" parameterClass="_hashmap" resultClass="Integer">
+		select count(*) from td_uas_host_outer 
+		<dynamic prepend="WHERE">
+		<isNotEmpty property="host" prepend="and"><![CDATA[ host = #host# ]]></isNotEmpty>  
+        <isNotEmpty property="startTime" prepend="and"><![CDATA[ time >= #startTime:TIMESTAMP# ]]></isNotEmpty>  
+        <isNotEmpty property="endTime" prepend="and"><![CDATA[ time <= #endTime:TIMESTAMP# ]]></isNotEmpty>  
+	 	</dynamic>
+	</select>
+	<select id="getList" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from td_uas_host_outer
+		<dynamic prepend="WHERE">
+		<isNotEmpty property="host" prepend="and"><![CDATA[ host = #host# ]]></isNotEmpty>  
+        <isNotEmpty property="startTime" prepend="and"><![CDATA[ time >= #startTime:TIMESTAMP# ]]></isNotEmpty>  
+        <isNotEmpty property="endTime" prepend="and"><![CDATA[ time <= #endTime:TIMESTAMP# ]]></isNotEmpty>  
+        </dynamic>
+	  	order by time desc
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				#pageSum# OFFSET #pageIndex#  
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectlist" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from td_uas_host_outer
+		<dynamic prepend="WHERE">
+		<isNotEmpty property="host" prepend="and"><![CDATA[ host = #host# ]]></isNotEmpty>  
+		<isNotEmpty property="usergrpid" prepend="and"><![CDATA[ usergrpid = #usergrpid# ]]></isNotEmpty>  
+        </dynamic>
+	  	order by time desc
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				#pageSum# OFFSET #pageIndex#  
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="gethost" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from td_uas_host_outer
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="host"  prepend="and"><![CDATA[ host = #host# ]]></isNotEmpty>  
+        <isNotEmpty property="time"  prepend="and"><![CDATA[ time = #time:TIMESTAMP# ]]></isNotEmpty>  
+	 	</dynamic>
+	</select>
+	
+	<select id="selectall" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from td_uas_host_outer
+	</select>
+	
+	
+	<delete id="delete" parameterClass="_hashMap">
+		delete from td_uas_host_outer
+	</delete>
+	
+
+</sqlMap>

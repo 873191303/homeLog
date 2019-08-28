@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" >
+ 
+</script>
+</head>
+<body> 
+ 
+<form name="form" method="POST"
+		action="import.json">
+	<table boder="0">
+		<tr>
+			<td><p> </p><td>
+			<td><textarea name="jsonStr" rows="10" cols="100"></textarea><td>
+			<td><input type="submit" value="导入联系人"><td>
+		</tr>
+	</table>	
+</form>
+ 
+<form name="form" method="POST"
+		action="export.json">
+	<table boder="0">
+		<tr>
+			<td><p> </p><td>
+			<td><textarea name="jsonStr" rows="4" cols="100">{"version":"1","clientId":"410001","userId":"1","sourceType":"1"}</textarea><td>
+			<td><input type="submit" value="导出联系人"><td>
+		</tr>
+	</table>	
+</form>
+
+<form name="form" method="POST"
+		action="getContactByContactId.action">
+	<table boder="0">
+		<tr>
+			<td><p> </p><td>
+			<td><textarea name="jsonStr" rows="4" cols="100">{"version":"1","clientId":"410001","userId":"1","contactId":"1", "hasUpdateTime":"1"}</textarea><td>
+			<td><input type="submit" value="获取联系人(getContactByContactId)"><td>
+		</tr>
+	</table>	
+</form>
+</body>
+</html>

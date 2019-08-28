@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="large_file">
+	
+	<insert id="add" parameterClass="_hashmap">
+	 INSERT INTO large_file (
+	 ip,city,create_time,update_time,other,COL
+	 )
+	 VALUES(
+	 #ip#,#city#,#createTime:TIMESTAMP#,#updateTime:TIMESTAMP#,#other#,#COL#
+	 )
+	</insert>
+	
+	<update id="update"  parameterClass="_hashmap">
+		update large_file
+		 <dynamic prepend="SET">  
+                <isNotEmpty property="ip" prepend=","><![CDATA[ ip = #ip# ]]></isNotEmpty>  
+				<isNotEmpty property="city" prepend=","><![CDATA[ city = #city# ]]></isNotEmpty>  
+				<isNotEmpty property="updateTime" prepend=","><![CDATA[ update_time = #updateTime:TIMESTAMP# ]]></isNotEmpty> 
+				<isNotEmpty property="other" prepend=","><![CDATA[ other = #other# ]]></isNotEmpty>  
+				<isNotEmpty property="COL" prepend=","><![CDATA[ COL = #COL# ]]></isNotEmpty>  
+	    </dynamic>
+	     <dynamic prepend="WHERE">  
+	        id = #id#  
+	    </dynamic>  
+	</update>
+	
+	<select id="getSum" parameterClass="_hashmap" resultClass="Integer">
+		select count(*) from large_file 
+	</select>
+	
+	<select id="getCount" parameterClass="_hashmap" resultClass="Integer">
+		select count(*) from large_file 
+	<dynamic prepend="WHERE">
+       <isNotEmpty property="filename" prepend="and"><![CDATA[ filename = #filename# ]]></isNotEmpty>  
+ 	</dynamic>
+	</select>
+	
+	<select id="getList" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from large_file
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="filename" prepend="and"><![CDATA[ filename = #filename# ]]></isNotEmpty>  
+	 	</dynamic>
+	  	order by time desc
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				 #pageSum# OFFSET #pageIndex#  
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	
+	<delete id="delete" parameterClass="_hashMap">
+		delete from large_file
+	</delete>
+	
+
+</sqlMap>

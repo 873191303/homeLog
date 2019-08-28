@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="td_usergrp_isp_mst">
+	
+	
+	
+	<update id="update"  parameterClass="_hashmap">
+		update td_usergrp_isp_mst
+		 <dynamic prepend="SET">  
+            <isNotEmpty property="time" prepend=","><![CDATA[ time = #time# ]]></isNotEmpty>  
+	    </dynamic>
+	     <dynamic prepend="WHERE">
+	       <isNotEmpty property="id"  prepend="and"><![CDATA[ id = #id# ]]></isNotEmpty>  
+           <isNotEmpty property="type"  prepend="and"><![CDATA[ type = #type# ]]></isNotEmpty> 
+	    </dynamic>  
+	</update>
+	<select id="selectlist" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from td_usergrp_isp_mst
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="usergrpid" prepend="and"><![CDATA[ usergrpid = #usergrpid# ]]></isNotEmpty>  
+        <isNotEmpty property="ispid" prepend="and"><![CDATA[ ispid = #ispid# ]]></isNotEmpty>
+	 	</dynamic>
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				#pageSum# OFFSET #pageIndex#  
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="getSum" parameterClass="_hashmap" resultClass="Integer">
+		select count(*) from td_usergrp_isp_mst 
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="usergrpid" prepend="and"><![CDATA[ usergrpid = #usergrpid# ]]></isNotEmpty>  
+        <isNotEmpty property="ispid" prepend="and"><![CDATA[ ispid = #ispid# ]]></isNotEmpty>
+	 	</dynamic>
+	</select>
+	
+		<select id="slebytype" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from td_usergrp_isp_mst
+		<dynamic prepend="WHERE">
+		<isNotEmpty property="type" prepend="and"><![CDATA[ type = #type# ]]></isNotEmpty> 
+		</dynamic>
+	</select>
+	
+
+</sqlMap>

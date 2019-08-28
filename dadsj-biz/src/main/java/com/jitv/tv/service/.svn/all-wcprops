@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service
+END
+HomeLogService.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/HomeLogService.java
+END
+ResourcesService.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/ResourcesService.java
+END
+IpService.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/IpService.java
+END
+DataBaseTimeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/DataBaseTimeService.java
+END
+LoginService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/LoginService.java
+END
+UserBusinessService.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/UserBusinessService.java
+END
+ARoleResourcesService.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/ARoleResourcesService.java
+END
+AdminService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/AdminService.java
+END
+IMonitorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/IMonitorService.java
+END
+BehaviorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/BehaviorService.java
+END
+DictionariesService.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/DictionariesService.java
+END
+RoleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/RoleService.java
+END
+LargeFileService.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/LargeFileService.java
+END
+TopStatisticsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/TopStatisticsService.java
+END
+DatabaseService.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/DatabaseService.java
+END
+SysNetworkService.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/SysNetworkService.java
+END
+ARoleUserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/ARoleUserService.java
+END
+BrasService.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/BrasService.java
+END
+InternetResourcesService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dabigdata/!svn/ver/293/dadsj/dadsj-biz/src/main/java/com/jitv/tv/service/InternetResourcesService.java
+END

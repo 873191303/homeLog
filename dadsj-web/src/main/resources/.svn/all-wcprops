@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/dabigdata/!svn/ver/305/dadsj/dadsj-web/src/main/resources
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/dabigdata/!svn/ver/305/dadsj/dadsj-web/src/main/resources/log4j.properties
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-web/src/main/resources/applicationContext.xml
+END
+fw.config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-web/src/main/resources/fw.config.xml
+END

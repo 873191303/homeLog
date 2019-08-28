@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="pragma" content="no-cache" /> 
+</head>
+<body>
+<script>
+var actions = new Array();
+
+
+
+actions["contact/deleteContact.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"909","uidAct":"909","contactIdList":[234,233]}';
+actions["icontact/weibo/include.json"]='{"clientId":"200001","userId":10641,"offset":"0","rowCount":"1000"}';
+actions["icontact/weibo/exclude.json"]='{"clientId":"200001","userId":10641,"offset":"0","rowCount":"1000"}';
+actions["asynctask/forRegisterMessage.action"]='{"clientId":"410001","userId":"1","uidAct":"1","mobileNumber":"13944455566","inviteId":"123","userIdA":"2211","crreateTime":"2009-7-22 12:00:00"}';
+actions["contact/unRegister.action"]='{"version":"1","optCode":"opt","clientId":"410001","userId":"1","uidAct":"1","registerId":"1"}';
+actions["contact/updateContactTypes.action"]='{"userId":"1","uidAct":"1","clientId":"410001","contactId":"22641550","typeIdList":[9477037,9477038]}';
+actions["contact/getUserInfoByMobileForYouming.action"]='{"userId":"2001095","clientId":"410001","uidAct":"502176","mobile":"13567896789"}';
+actions["contact/addContactInfo.action"]='{"version":"1","clientId":"410001","userId":"10201","uidAct":"2","friendName":"cow","friendMobile":"13411153610","friendUserId":"21345","email":"user@163.com","friendQQ":"222222","friendFetion":"12345","friendOtherNumber":"12345","friendOtherTel":"5643566","friendURL":"www.friend.com","officePhone":"4488321","friendBirthday":"2000-01-01","friendMsn":"344@hotmail.com","friendSex":"0","friendCompany":"mobile","friendPosition":"CEO","friendTel":"23456","friendEleTel":"4566778","friendState":"beijing","friendCity":"bjing","friendPostalCode":"100088","friendAddress":"daxing","companyURL":"company.url","companyAddress":"dcheng","note":"good","friendRemark":"flag","dataFromFlag":"1"}';
+actions["contact/uploadFromYoumingReport.action"]='{"version":"1","optCode":"opt","clientId":"410001","userId":"1","uidAct":"1","uploadCount":"100"}';
+actions["contact/deleteContactByContactId.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"909","uidAct":"909","contactIdList":[234,233]}';
+actions["contact/getUserIdByMobileForYouming.action"]='{"userId":"2001095","clientId":"410001","uidAct":"502176","mobile":"13567896789"}';
+actions["contact/mergeContactInfo.action "]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"5000003013","uidAct":"1",contact:{"blackFlag":"0","businessFlag":"0","commonlyFlag":"0","contactId":"22591545","contactTime":null,"createTime":"2010-02-12 22:31:13","dataFromFlag":"1","email":null,"etag":"567713358","friendId":"0","friendName":"兰","mobile":"13800138000","nameSpell":"","syncMobileFlag":"1","twowayFlag":"0","typeIdList":[0],"userId":"5000003013"},"discardConcatIds":[1,2,3]}';
+actions["importexport/startUploadUserAllContactInfo.action"]='{"version":"1","importType":"14","sourceType":"1","clientId":"410001","uidAct":"5000003013","userId":"10201"}';
+actions["importexport/finishUploadUserAllContactInfo.action"]='{"version":"1","importType":"14","sourceType":"1","clientId":"410001","uidAct":"5000003013","userId":"10201",result:1}';
+actions["contact/addContactToType.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"10201","uidAct":"1","contactIdList":[102],"typeId":"401"}';
+actions["contact/updateContactByContactId.action"]='{{{ {"version":"1","optCpde":"opt","clientId":"410001","userId":"909","uidAct":"2","friendName":"cow","friendMobile":"1392888888","contactId":"345", "friendUserId":"21345","email":"user@163.com","friendQQ":"222222","friendFetion":"12345","friendOtherNumber":"12345","friendOtherTel":"5643566", "friendURL":"www.friend.com","officePhone":"4488321","friendBirthday":"2000-01-01", "friendMsn":"344@hotmail.com","friendSex":"0","friendCompany":"mobile","friendPosition":"CEO","friendTel":"23456","friendEleTel":"4566778", "friendState":"beijing","friendCity":"bjing","friendPostalCode":"100088","friendAddress":"daxing","companyURL":"company.url", "companyAddress":"dcheng","note":"good","friendRemark":"flag"} }}}';
+actions["contact/insertContactType.action"]='{"version":"1","optCode":"opt","clientId":"410001","userId":"5000003013","uidAct":"1","typeName":"客户2"}';
+actions["smsBackup/insertSms.action"]='{"version":"1","optCpde":"opt","clientId":"410001","uidAct":"1","userId":"5000003013","smsList":[{"sendMobile":"13751795635","receiveMobile":"15915723212","smsType":"1","content":"hello,man",time:"2010-04-09"},{"sendMobile":"13751795636","receiveMobile":"15915723212","smsType":"1","content":"hello,man",time:"2010-04-09"}]}';
+actions["contact/transferContactType.action"]='{"userId":"10201","uidAct":"1","clientId":"410001","contactIdList":[102,100],"typeIdFrom":"0","typeIdTo":"100"}	';
+actions["icontact/transferContactType.action"]='{"userId":"10201","uidAct":"1","clientId":"410001","contactIdList":[102,100],"typeIdFrom":"0","typeIdTo":"100"}	';
+actions["contact/setRecentlyContactTime.action"]='{"userId":"2","uidAct":"2","clientId":"410001",dataList:[{"sourceId":"1","userIdB":"123","mobile":"13512345678","contactTime":"2009-7-22 12:00:00"}]}';
+actions["relationship/setRecentlyContactTime.action"]='{"userId":"2","uidAct":"2","clientId":"410001",dataList:[{"sourceId":"1","userIdB":"123","mobile":"13512345678","contactTime":"2009-7-22 12:00:00"}]}';
+actions["importexport/import139MailAllContact.action"]='{"version":"1","emailId":"13999999888","sourceType":"1","clientId":"410001","uidAct":"10201","userId":"10201","sync":1}';
+actions["contact/setContactFlagBatch.action"]='{"version":"1","optCode":"opt","clientId":"410001","userId":"10201","uidAct":"1","syncMobileFlag":"1","contactIdList":"1,2,3"}';
+actions["contact/findContactType.action"]='{"version":"1","optCpde":"opt","clientId":"123456","userId":"5000003013","uidAct":"999","typeId":"9277055"}';
+actions["contact/deleteContactType.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"10201","uidAct":"1","typeId":"100"}';
+actions["contact/setCommonlyFlagByUserIdContactId.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"1","uidAct":"1","contactIdList":[1,2,3,4]}';
+actions["contact/inviteOuterFriend.action"]='{"clientId":"410001","userId":"1","uidAct":"1","inviteType":"0","inviteAcc":"jack-java@live.cn","effNum":"1","effType":"2","content":"tom","typeId":"123","ifMobileFlag":"0","fullNameTo":"zhangfai","appId":"193","callbackUrl":"","relationshipList":""}';
+actions["smsBackup/getBackupSms.action"]='{"version":"1","optCpde":"opt","clientId":"410001","uidAct":"1","userId":"5000003013","type":"5","startTime":"1987-12-03-12:20","endTime":"2013-12-11-12:39"}';
+actions["contact/updateContactType.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"10201","uidAct":"10201","typeId":"100","typeName":"123456"}';
+actions["contact/getBusinessCard.action "]='{"version":"1","optCpde":"opt","clientId":"123456","userId":"909","uidAct":"1"}';
+actions["importexport/importContactBatch.action"]='{"version":"1","optCpde":"dw","importType":"1","sourceType":"13","fileContent":"[姓名,手机,电子邮件,固话,电话1, 传真,地址,生日,公司,分组信息, kk22,139894727211,,139894727222,139894727233,,,1983-12-1,,,, 2093名字0,1365588840,,,,,,,,,, 2093名字1,1365588841,,,,,,,,,, 2093名字2,1365588842,,,,,,,,,, 2093名字3,1365588843,,,,,,,,,,]","sourceAccount":"13910911234","sourcePwd":"1234","clientId":"410001","uidAct":"10201","userId":"10201"}';
+actions["contact/duplicateContactGroupList.action"]='{"version":"1","optCode":"opt","clientId":"123456","userId":"1234","uidAct":"123"}';
+actions["smsBackup/deleteBackupSms.action"]='{"version":"1","optCpde":"opt","clientId":"410001","uidAct":"1","userId":"9","uniqueIds":"1f77919e2919c0da4a939ce2865c8d69,a95c0c56a0629db17b1f0fd820ab7c3f"}';
+actions["contact/listInviteRecordOtherDeal.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"10201","uidAct":"88","inviteAcc":"13426346990"}';
+actions["contact/setSnsUpdateFlag.action"]='{"userId":"2","uidAct":"2","clientId":"410001","sourceId":"1","flag":"1"}';
+actions["importexport/importContact.action"]='{"version":"1","optCpde":"dw","importType":"1","sourceType":"13","fileContent":"[姓名,手机,电子邮件,固话,电话1, 传真,地址,生日,公司,分组信息, kk22,139894727211,,139894727222,139894727233,,,1983-12-1,,,, 2093名字0,1365588840,,,,,,,,,, 2093名字1,1365588841,,,,,,,,,, 2093名字2,1365588842,,,,,,,,,,2093名字3,1365588843,,,,,,,,,,]","sourceAccount":"13910911234","sourcePwd":"1234","clientId":"410001","uidAct":"10201","userId":"10201"}';
+actions["icontact/addContact.action"]='{"version":"1","clientId":"410001","userId":"10383","uidAct":"10383","contactInfo":{"name":"keke_001","gender": "男", "mobile": ["13632304529","13632303529"], "shortTelNum":["33333","44444"],"workTel":["88888881","88888882"],"homeTel":["88888883","888888812"],"homeFax": ["8888888111","8888888122"],"workFax": ["8888888133","8888888142"],"BP":["888818881","8888288812"],"carTel":["88888281","777777"],"companyTelExchange": ["7777771","7777772"],"wirelessMachine": ["77777711","77777712"],   "homeMail": ["7777771@aspirecn.com", "7777772@aspirecn.com"],"workMail": ["17777771@aspirecn.com","27777771@aspirecn.com"], "position":["职位1","职位2"],"company": ["公司1","公司2"],"homeAddress": ["家庭地址1","家庭地址2"],"workAddress":["工作地址1","工作地址2"],"birthday":["2000-01-01","2000-01-02"],"anniversary": ["2001-01-01","2002-01-01"],"website": ["http://www.hao123.com","http://eip.aspirehld.com"], "personalInfo": ["个人资料1","个人资料2"],"blog":["http://blog.tianya.cn","http://blog.10086.cn"],"weibo":["http://weibo.10086.cn","http://shequ.10086.cn"],"companyWebsite": ["公司网址1","公司网址2"],"qq": ["124123242","1231241234"],"note":["备注1","备注2"]}}';
+
+actions["icontact/updateContact.action"]='{"version":"1","clientId":"410001","userId":"10383","uidAct":"10383","contactInfo":{"contactId":"52591513","name":"keke_001","gender": "男", "mobile": ["13632304529","13632303529"], "shortTelNum":["33333","44444"],"workTel":["88888881","88888882"],"homeTel":["88888883","888888812"],"homeFax": ["8888888111","8888888122"],"workFax": ["8888888133","8888888142"],"BP":["888818881","8888288812"],"carTel":["88888281","777777"],"companyTelExchange": ["7777771","7777772"],"wirelessMachine": ["77777711","77777712"],   "homeMail": ["7777771@aspirecn.com", "7777772@aspirecn.com"],"workMail": ["17777771@aspirecn.com","27777771@aspirecn.com"], "position":["职位1","职位2"],"company": ["公司1","公司2"],"homeAddress": ["家庭地址1","家庭地址2"],"workAddress":["工作地址1","工作地址2"],"birthday":["2000-01-01","2000-01-02"],"anniversary": ["2001-01-01","2002-01-01"],"website": ["http://www.hao123.com","http://eip.aspirehld.com"], "personalInfo": ["个人资料1","个人资料2"],"blog":["http://blog.tianya.cn","http://blog.10086.cn"],"weibo":["http://weibo.10086.cn","http://shequ.10086.cn"],"companyWebsite": ["公司网址1","公司网址2"],"qq": ["124123242","1231241234"],"note":["备注1","备注2"]}}';
+
+actions["icontact/copyContact.action"]='{"version":"1","clientId":"410001","userId":"10383","uidAct":"10383","toUserId":"1","contactIds":[9477037,9477038],"toGroupIds":[111,222]}';
+
+actions["icontact/getContact.action"]='{"version":"1","clientId":"410001","userId":"10383","uidAct":"10383","typeIdList":[9477037,9477038],offset:0,rowCount:5}';
+
+
+actions["contact/listContactByUserId.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"1","uidAct":"1","distinct":"1","sort":"0","filterChar":"A", "typeIdList":[12],"offset":"10","rowCount":"10","hasMobile":"1","blackFlag":"0","commonlyFlag":"1","twowayFlag":"0", "dataFormFlag":"0","hasFriendUserId":"0"}';
+actions["contact/getContactByContactId.action "]='{"version":"1","optCpde":"opt","clientId":"123456","userId":"909","uidAct":"1","contactId":"12345"}';
+actions["contact/getActionFlagBatch.action"]='{"optCode":null,"clientId":"410001","uidAct":"1","userId":"10201","dataList":[{"userId":"1","actionFlag":"1"},{"userId":"2","actionFlag":"1"}]}';
+actions["contact/getContactFlagByFriendId.action"]='{"version":"1","optCode":"opt","clientId":"410001","userId":"1","uidAct":"1","friendIdList":[216,123]}';
+actions["contact/listContactTypeByUserId.action "]='{"version":"1","uidAct":"1","optCode":"opt","clientId":"410001","userId":"10201","subDataset":"1"}';
+actions["contact/updateTwowayFlag.action "]='{"version":"1","optCode":"opt","clientId":"410001","userId":"1","uidAct":"1","friendId":"1","twowayFlag":"1"}';
+
+actions["contact/findContactByKey.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"1","uidAct":"1","conditionName":"13522123456","filterChar":"A","typeId":"12","offset":"10","rowCount":"10","blackFlag":"0","commonlyFlag":"1","twowayFlag":"0","dataFromFlag":"0"}';
+actions["contact/listContactIdByUserId.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"1","uidAct":"1","distinct":"1","sort":"0","filterChar":"A","typeIdList":12,"offset":"10","rowCount":"10","hasMobile":"1","blackFlag":"0","commonlyFlag":"1","twowayFlag":"0","dataFormFlag":"0","hasFriendUserId":"0"}';
+actions["icontact/hasWhiter.action"]='{"clientId":"123456","userId":"909","uidAct":"1"}';
+actions["icontact/playActivity.action"]='{"clientId":"200002","uidAct":"10368","userId":"10368",activityId:"1","opType":1,"userMobile":"139","invitedMobile":"128","channel":1,"bonusType":0}';
+actions["contact/getContactByContactIdBatch.action"]='{"version":"1","optCpde":"opt","clientId":"123456","userId":"909","uidAct":"1","contactIdList":[12345,25658]}';
+
+actions["importexport/vcard_get_all_contact_from_139_to_youming.action "]='{"clientId":"410001","userId":"1001570","uidAct":"1001570"}';
+actions["contact/listContactByNameOrSpell.action "]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"10201","uidAct":"3","inputSpell":"t","offset":"0","rowCount":"10"}';
+actions["contact/deleteContactFromType.action"]='{"version":"1","optCpde":"opt","clientId":"410001","userId":"10201","uidAct":"3","contactIdList":[5],"typeId":"401"}';
+
+actions["icontact/userActivity.action"]='{"uidAct":"10368","userId":"10368",activityId:"1","clientId":"20002"}';
+
+actions["icontact/modifypassword/token/mt.action"]='{"requestId":"d07601c499625262f6dca7b7","clientId":"100001","mobile":"15999978717"}';
+actions["icontact/modifypassword/token/auth.action"]='{"requestId":"d07601c499625262f6dca7b7","clientId":"100001","mobile":"15999978717","token":"2222","password":"111111"}';
+
+actions["icontact/hasWhiter.action"]='{"requestId":"d07601c499625262f6dca7b7","clientId":"100001","userId":"9295","uidAct":"1"}';
+actions["contact/testing.json"]='{"clientId":"200001","password":"gz.icontact.aspirehld.com","action":"viewNew","userId":50142741}';
+
+actions["icontact/activity/play.action"]='{"realClientId":"10002","requestId":"d07601c499625262f6dca7b7","mobile":"13800138000","contactUserId":"11111111","activityId":"20121024","opType":"204","channelId":"1","extension":{"invitation":"111"}}';
+
+actions["icontact/import.action"]='{"version": "1","optCode": "dw","clientId": "410001","userId": "5000133001","importMode":"m","dataFromFlag":"0","returnId":"true","contactList": []}';
+actions["icontact/export.action"]='{"requestId":"d07601c499625262f6dca7b7","clientId":"100001","userId":"9295","uidAct":"9295"}';
+
+
+var actionNames = new Array();
+var i=0;
+for (var actionName in actions) {
+    actionNames[i] = actionName;
+    i++;
+}
+actionNames.sort();
+</script> 
+<table>
+	<tr>
+		<td align="right">Server：</td>
+		<td><input id="server" value=""
+			style="width: 700px" /></td>
+	</tr>
+	<tr>
+		<td align="right">Url：</td>
+		<td><input id="postUrl" value=""
+			style="width: 700px" /></td>
+	</tr>
+	<script language="javascript" type="text/javascript">
+		 var url = location.href;
+		 var si = url.indexOf("/", 8);
+		 var si2 = url.indexOf("/", si + 1);
+		// alert(si + ":" + si2);
+		 if (si2 > 0) {
+			document.getElementById("server").value = url.substring(0, si2 + 1);
+		 } else {
+			document.getElementById("server").value = "";
+		 } 
+	 </script>
+	<tr>
+		<td align="right" valign="top">Action：</td>
+		<td><input type="radio" name="type" value="1" checked
+			onclick="checkType()">ActionName： <select id="actionName"
+			onchange="actionNameChange()">
+			<script>
+	          for (var i=0;i<actionNames.length;i++) {      
+	          	document.write("<option value=\""+actionNames[i]+"\">"+actionNames[i]+"</option>");
+	          }
+	        </script>
+		</select><br>
+		</td>
+	</tr>
+		<form id="requestForm" method="post" target="resultFrame">
+	<tr>
+			<table><tr>
+			<td align="right" valign="top">Paras：</td>
+			<td><textarea id="jsonStr" name="jsonStr" style="width: 1000px; height: 100px; word-wrap: break-word; "></textarea></td></tr>
+			</table>
+	</tr>
+	<tr>
+		<td align="right" valign="top"></td>
+		<td><input type="button"
+			style="width: 300px; height: 40px; font-size: 30px;" value="提交(submit)"
+			onClick="go()"></td>
+	</tr>
+		</form>
+	<tr>
+		<td align="right" valign="top">Result:</td>
+		<td>
+		<div id="url" style="font-size: 12px"></div>
+		<form id="form" method="post" target="resultFrame">
+		</form>
+		<iframe name="resultFrame"
+			style="width: 1000px; height: 400px; border: 1px solid #000000; word-wrap: break-word;"></iframe>
+		</td>
+	</tr>
+</table>
+
+<script>
+function checkType(){
+    var type = getCheckedValue();
+    var paras = document.getElementById("jsonStr");
+    paras.disabled=false; 
+
+    if(type==2 || type==4){
+        paras.style.height="0px";
+        paras.disabled=true;
+    }else if(type==3){
+        paras.style.height="20px";
+    }else if(type==1){
+        paras.style.height="110px";
+    }
+}
+function getCheckedValue() {
+        var radioObj = document.getElementsByName("type");
+	if(!radioObj)
+		return "";
+	var radioLength = radioObj.length;
+	if(radioLength == undefined)
+		if(radioObj.checked)
+			return radioObj.value;
+		else
+			return "";
+	for(var i = 0; i < radioLength; i++) {
+		if(radioObj[i].checked) {
+			return radioObj[i].value;
+		}
+	}
+	return "";
+}
+function setCheckedValue(newValue) {
+        var radioObj = document.getElementsByName("type");
+	if(!radioObj)
+		return;
+	var radioLength = radioObj.length;
+	if(radioLength == undefined) {
+		radioObj.checked = (radioObj.value == newValue.toString());
+		return;
+	}
+	for(var i = 0; i < radioLength; i++) {
+		radioObj[i].checked = false;
+		if(radioObj[i].value == newValue.toString()) {
+			radioObj[i].checked = true;
+		}
+	}
+}
+
+
+function adminActionNameChange(){
+    setCheckedValue(3);
+    checkType();
+
+    var actionName = document.getElementById("adminActionName").value;
+    var jsonStr = adminActions[actionName]; 
+}
+function actionNameChange(){
+    setCheckedValue(1);
+    checkType();
+
+    var actionName = document.getElementById("actionName").value;
+	var serverUrl = document.getElementById("server").value;
+    var jsonStr = actions[actionName]; 
+    document.getElementById("jsonStr").value = jsonStr;
+	document.getElementById("postUrl").value = serverUrl+actionName;
+}
+function go(){
+    var server = document.getElementById("server").value;
+    
+    var jsonStr = document.getElementById("jsonStr").value;
+    //jsonStr = encodeURIComponent(jsonStr);
+    //jsonStr = jsonStr.replace(/\n/gi,'&');
+
+    //var kk = encodeURIComponent('#');
+    //jsonStr = jsonStr.replace(/#/gi,kk); 
+  
+
+
+    var form = document.getElementById("requestForm");
+
+    var url = "";
+    var type = getCheckedValue(); 
+
+    if(type==1 ){
+		//var actionName = document.getElementById("actionName").value;
+		// actionName = actionName+".json"
+	    url = document.getElementById('postUrl').value;
+	    document.getElementById("url").innerHTML=url;
+
+    }else if(type==3){
+		var actionName = document.getElementById("adminActionName").value;
+        url = server+actionName+"?"+jsonStr;
+        document.getElementById("url").innerHTML=url;
+
+    }else if(type==2){
+        url = server+"/r";
+        document.getElementById("url").innerHTML=url;
+    }else if(type==4){
+        url = server+"/reloadMemObjects?_domain=moc.931.eripsa&_reload=allConfig";
+        document.getElementById("url").innerHTML=url;
+
+    } 
+
+    form.action = url;  
+    form.submit();
+}
+
+function action(act){
+    var server = document.getElementById("server").value;
+    var url = server+"/fill?operation="+act;
+
+    if(act == 'insertActiveUser'){
+        var yesterday=document.getElementById("yesterday").value;
+	url = url+"&date="+yesterday;
+    }
+
+    if(act == 'fillCacheWithoutCare')
+    {
+        url = server+"/fill?operation=fillCache&withoutCare=true";
+    }
+
+    var form = document.getElementById("form");
+    document.getElementById("url").innerHTML=url;
+    form.action = url;
+    form.submit();
+}
+actionNameChange();
+</script>
+
+</body>
+</html>

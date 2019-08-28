@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="tm_website">
+	
+	
+	<select id="selectlist" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from tm_website
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="id" prepend="and"><![CDATA[ id = #id# ]]></isNotEmpty>  
+        <isNotEmpty property="name" prepend="and"><![CDATA[ name = #name# ]]></isNotEmpty>
+	 	</dynamic>
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				#pageSum# OFFSET #pageIndex#  
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="select" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from tm_website
+	</select>
+	
+	
+
+</sqlMap>

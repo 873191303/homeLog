@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="td_uas_iptopn">
+	
+	<insert id="add" parameterClass="_hashmap">
+	 INSERT INTO td_uas_iptopn (
+	 time,iptype,ipaddr,upbyte,dnbyte,uppkt,dnpkt
+	 )
+	 VALUES(
+	 #time:TIMESTAMP#,#iptype#,#ipaddr#,#upbyte#,#dnbyte#,#uppkt#,#dnpkt#
+	 )
+	</insert>
+	
+	<select id="getSum" parameterClass="_hashmap" resultClass="Integer">
+		select count(*) from td_uas_iptopn 
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="iptype" prepend=","><![CDATA[ iptype = #iptype# ]]></isNotEmpty>  
+        <isNotEmpty property="ipaddr" prepend=","><![CDATA[ ipaddr = #ipaddr# ]]></isNotEmpty>  
+	 	</dynamic>
+	</select>
+	
+	<select id="getList" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from td_uas_iptopn
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="iptype" prepend=","><![CDATA[ iptype = #iptype# ]]></isNotEmpty>  
+        <isNotEmpty property="ipaddr" prepend=","><![CDATA[ ipaddr = #ipaddr# ]]></isNotEmpty>  
+	 	</dynamic>
+	  	order by id desc
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				 #pageSum# OFFSET #pageIndex#  
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<delete id="delete" parameterClass="_hashMap">
+		delete from td_uas_iptopn
+	</delete>
+	
+
+</sqlMap>

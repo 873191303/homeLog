@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant
+END
+ChannelConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/ChannelConstant.java
+END
+AppConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dabigdata/!svn/ver/276/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/AppConstant.java
+END
+Constant.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/Constant.java
+END
+ApplicationBannerConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/ApplicationBannerConstant.java
+END
+RecommendConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/RecommendConstant.java
+END
+RedisConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/RedisConstant.java
+END
+VideoConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/VideoConstant.java
+END
+TagConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/TagConstant.java
+END
+LotteryActivityConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/LotteryActivityConstant.java
+END
+ApplicationConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/ApplicationConstant.java
+END
+ScreenRecommendConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/ScreenRecommendConstant.java
+END
+ChannelLiveConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/ChannelLiveConstant.java
+END
+PPTVLiveConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/PPTVLiveConstant.java
+END
+QRCodeConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/QRCodeConstant.java
+END
+KanShangAPIConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/constant/KanShangAPIConstant.java
+END

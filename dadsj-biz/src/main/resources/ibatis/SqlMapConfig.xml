@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+
+	<settings cacheModelsEnabled="true" enhancementEnabled="true"
+		lazyLoadingEnabled="false" maxRequests="128" maxSessions="64"
+		maxTransactions="32" useStatementNamespaces="true"
+		defaultStatementTimeout="30" />
+	<typeAlias alias="_hashmap" type="java.util.HashMap" />
+	<typeAlias alias="_int" type="java.lang.Integer" />
+
+	<transactionManager type="JDBC">
+		<dataSource type="com.jitv.tv.dao.base.ProxoolDataSourceFactory">
+			<property name="JDBC.Driver" value="${driver}" />
+			<property name="JDBC.ConnectionURL" value="${url}" />
+			<property name="JDBC.Username" value="${username}" />
+			<property name="JDBC.Password" value="${password}" />
+        </dataSource>
+	</transactionManager>  
+	<sqlMap resource="ibatis/t_j_a_role_resources.xml" />
+	<sqlMap resource="ibatis/t_j_a_role_user.xml" />
+	<sqlMap resource="ibatis/t_j_resources.xml" />
+	<sqlMap resource="ibatis/t_j_role.xml" />
+	<sqlMap resource="ibatis/t_j_user.xml" />
+	<sqlMap resource="ibatis/behavior_tbl.xml" />
+	<sqlMap resource="ibatis/ip_tbl.xml" />
+	<sqlMap resource="ibatis/dictionaries_tbl.xml" />
+	<sqlMap resource="ibatis/large_file.xml" />
+	<sqlMap resource="ibatis/bras_tbl.xml" />
+	<sqlMap resource="ibatis/bcity_tbl.xml" />
+	<sqlMap resource="ibatis/databasetime_tbl.xml" />
+	<sqlMap resource="ibatis/host_inner_tbl.xml" />
+	<sqlMap resource="ibatis/host_outer_tbl.xml" />
+	<sqlMap resource="ibatis/td_usergrp_isp_mst.xml" />
+	<sqlMap resource="ibatis/tm_usergroup.xml" />
+	<sqlMap resource="ibatis/tm_website.xml" />
+	<sqlMap resource="ibatis/error_login_tbl.xml" />
+	<sqlMap resource="ibatis/td_uas_iptopn.xml" />
+	<sqlMap resource="ibatis/alarm_tbl.xml" />
+</sqlMapConfig>

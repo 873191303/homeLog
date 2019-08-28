@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dao/base
+END
+AbstractDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dao/base/AbstractDAO.java
+END
+IbatisInit.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dao/base/IbatisInit.java
+END
+ProxoolDataSourceFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/dao/base/ProxoolDataSourceFactory.java
+END

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="behavior_tbl">
+	
+	<insert id="add" parameterClass="_hashmap">
+	     INSERT INTO behavior_tbl (  
+    <dynamic prepend=" ">  
+                <isNotEmpty property="serviceIP" prepend=",">service_ip</isNotEmpty>  
+                <isNotEmpty property="userName" prepend=",">user_name</isNotEmpty>  
+                <isNotEmpty property="type" prepend=",">type</isNotEmpty>  
+                <isNotEmpty property="createTime" prepend=",">create_time</isNotEmpty>  
+                <isNotEmpty property="other" prepend=",">other</isNotEmpty>  
+                <isNotEmpty property="spare" prepend=",">spare</isNotEmpty>  
+    </dynamic>  
+    <![CDATA[ 
+        ) VALUES ( 
+    ]]>  
+    <dynamic prepend=" ">  
+                <isNotEmpty property="serviceIP" prepend=",">#serviceIP#</isNotEmpty>  
+                <isNotEmpty property="userName" prepend=",">#userName#</isNotEmpty>  
+                <isNotEmpty property="type" prepend=",">#type#</isNotEmpty>  
+                <isNotEmpty property="createTime" prepend=",">#createTime:TIMESTAMP#</isNotEmpty>  
+                <isNotEmpty property="other" prepend=",">#other#</isNotEmpty>  
+                <isNotEmpty property="spare" prepend=",">#spare#</isNotEmpty>  
+    </dynamic>  
+    <![CDATA[ 
+        ) 
+    ]]>  
+	 
+	</insert>
+	
+	<select id="getSum" parameterClass="_hashmap" resultClass="Integer">
+		select count(id) from behavior_tbl 
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="userName" prepend=","><![CDATA[ user_name = #userName# ]]></isNotEmpty>  
+        <isNotEmpty property="serviceIP" prepend=","><![CDATA[ service_ip = #serviceIP# ]]></isNotEmpty>
+	 	</dynamic>
+	</select>
+	
+<!-- 	 <select id="getbehavior" parameterClass="_hashmap" resultClass="_hashmap"> -->
+<!-- 		select id,service_ip AS serviceIP,user_name AS userName,type,create_time as createTime ,other,spare from behavior_tbl -->
+<!-- 		<dynamic prepend="WHERE"> -->
+<!--         <isNotEmpty property="userName" prepend=","><![CDATA[ user_name = #userName# ]]></isNotEmpty>   -->
+<!--         <isNotEmpty property="serviceIP" prepend=","><![CDATA[ service_ip = #serviceIP# ]]></isNotEmpty> -->
+<!-- 	 	</dynamic> -->
+<!-- 	  	order by create_time desc -->
+<!-- 		<dynamic prepend="limit">   -->
+<!-- 			<isNotEmpty property="pageIndex"> -->
+<!-- 				<isNotEmpty property="pageSum"> -->
+<!-- 				#pageIndex#, #pageSum# -->
+<!-- 				</isNotEmpty>  -->
+<!-- 			</isNotEmpty> -->
+<!-- 		</dynamic> -->
+<!-- 	</select> -->
+	
+	<select id="getbehavior" parameterClass="_hashmap" resultClass="_hashmap">
+	SELECT id,service_ip AS serviceIP,user_name AS userName,type,create_time as createTime ,other,spare FROM behavior_tbl a 
+    JOIN (select id AS bid from behavior_tbl 
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="userName" prepend=","><![CDATA[ user_name = #userName# ]]></isNotEmpty>  
+        <isNotEmpty property="serviceIP" prepend=","><![CDATA[ service_ip = #serviceIP# ]]></isNotEmpty>
+	 	</dynamic>
+	  	ORDER BY id DESC
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				#pageSum# OFFSET #pageIndex#
+				</isNotEmpty> 
+			</isNotEmpty>
+			) b ON a.id = b.bid ORDER BY id DESC
+		</dynamic>
+	</select>
+	
+	<select id="getById" parameterClass="_hashmap" resultClass="_hashmap">
+	 select * from behavior_tbl where id = #id# 
+	</select>
+	
+    <select id="getUserAll" parameterClass="_hashmap" resultClass="_hashmap">
+	 select * from behavior_tbl
+	</select>
+	
+
+	
+	<delete id="deleteById" parameterClass="_hashMap">
+		delete from behavior_tbl where id = #id#
+	</delete>
+	
+
+</sqlMap>

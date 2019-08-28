@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config> 
+	<properties>
+		<remote.config>false</remote.config>
+		<remote.config.url>s</remote.config.url>
+	</properties>   
+	<resource>
+		<icontact>
+			<cachePool>pc_icontact</cachePool>
+			<dbPool></dbPool>
+			<componentPool>pi_icontact</componentPool>
+			<environments></environments>
+		</icontact>
+		<sequence>
+			<cachePool></cachePool>
+			<dbPool>pdb_sequence</dbPool>
+			<componentPool></componentPool>
+			<environments></environments>
+		</sequence>
+	</resource>
+	<pool> 
+		<pc_icontact>
+			<pool_type>cache</pool_type>
+			<algorithm>hash</algorithm>
+			<nodes>
+				<item>
+					<mapping_no>000</mapping_no>
+					<service>mc_icontact</service>
+				</item>  
+			</nodes>
+		</pc_icontact>  
+		<pi_icontact>
+			<pool_type>component</pool_type>
+			<algorithm>random</algorithm>
+			<nodes>
+				<item>
+					<mapping_no>000</mapping_no>
+					<service>ice_icontact</service>
+				</item>  
+			</nodes>
+		</pi_icontact>
+		<pdb_sequence>
+			<pool_type>db</pool_type>
+			<algorithm>rang</algorithm>
+			<nodes>
+				<item>
+					<mapping_no>000</mapping_no>
+					<service>db_sequence:db_sequence</service>
+				</item>  
+			</nodes>
+		</pdb_sequence>  
+	</pool>
+	<service> 
+		<memcached>
+			<mc_icontact>
+				<host_ip>gz163.dev.10086.cn</host_ip>
+				<port>11211</port>
+			</mc_icontact> 
+		</memcached> 
+		<component>
+			<ice_icontact>
+				<host_ip>localhost</host_ip>
+				<port>7080</port>
+			</ice_icontact>
+		</component>	
+		<datasource>
+			<db_sequence>  
+				<dbType>mysql</dbType>
+				<host_ip>dev.rd.aspire.cn</host_ip>
+				<port>3306</port>
+				<dbName>aspire_sequence</dbName>
+				<minPoolSize>5</minPoolSize>
+				<maxPoolSize>15</maxPoolSize>
+				<lifetime>600</lifetime>
+				<dbUser>contact</dbUser>
+				<dbPassword>contact</dbPassword>
+			</db_sequence>  
+		</datasource>  	
+	</service>  
+	
+	<fw_lib_config>
+	 <!-- 服务接口实现类配置 -->
+	 <implement>
+	 	<local_cache_service>com.aspire.paas.impl.cache.local.EhcacheServiceImpl</local_cache_service> 
+	 	<!--<local_cache_service>com.aspire.paas.impl.cache.local.EhcacheServiceImpl</local_cache_service>
+	 	com.aspire.paas.impl.cache.local.NoOperationLocalCacheServiceImpl
+	 	 com.aspire.paas.impl.cache.distributed.NoOperationMemcachedServiceImpl
+	 	<distributed_cache_service>com.aspire.paas.impl.cache.distributed.memcached.SpyDirectMemcachedServiceImpl</distributed_cache_service>
+	 	 -->
+	 	<distributed_cache_service>com.aspire.paas.impl.cache.distributed.memcached.SpyDirectMemcachedServiceImpl</distributed_cache_service>
+		<db_connect_service>com.aspire.paas.impl.das.dbas.DbConnectServiceImpl</db_connect_service>
+	 	<db_access_service>com.aspire.paas.impl.das.dbas.DbAccessServiceImpl</db_access_service>
+	 </implement>
+	 
+	 <!-- 基础架构 组件服务客户端 ice组件的配置 -->
+	 <component_client>
+	 	<Ice.MessageSizeMax>10240000</Ice.MessageSizeMax>
+	 	<Ice.ThreadPool.Client.Size>10</Ice.ThreadPool.Client.Size>
+	 	<Ice.ThreadPool.Client.SizeMax>500</Ice.ThreadPool.Client.SizeMax>
+	 	<Ice.ThreadPool.Client.SizeWarn>500</Ice.ThreadPool.Client.SizeWarn>
+	 	<Ice.Override.ConnectTimeout>5000</Ice.Override.ConnectTimeout>
+	 	<!-- 使 endpoint上加 -t, 设置ice_timeout()无效, 故放弃设置此属性 -->
+	 	<!-- Ice.Override.Timeout>50000</Ice.Override.Timeout -->
+	 	<Ice.ConnectionIdleTime>30</Ice.ConnectionIdleTime>
+	 	<Ice.TCP.RcvSize>65535</Ice.TCP.RcvSize>
+	 	<Ice.TCP.SndSize>65535</Ice.TCP.SndSize>
+	 	<client.connections>30</client.connections>
+	 </component_client>
+	 
+	 <!-- 基础架构 组件服务器 ice组件的配置 -->
+	 <component_server>
+	 	<Ice.MessageSizeMax>10240000</Ice.MessageSizeMax>
+	 	<Ice.ThreadPool.Server.Size>10</Ice.ThreadPool.Server.Size>
+	 	<Ice.ThreadPool.Server.SizeMax>500</Ice.ThreadPool.Server.SizeMax>
+	 	<Ice.ThreadPool.Server.SizeWarn>500</Ice.ThreadPool.Server.SizeWarn>
+	 	<Ice.Override.ConnectTimeout>5000</Ice.Override.ConnectTimeout>
+	 	<!-- 使 endpoint上加 -t, 设置ice_timeout()无效, 故放弃设置此属性 -->
+	 	<!-- Ice.Override.Timeout>50000</Ice.Override.Timeout -->
+	 	<Ice.ConnectionIdleTime>30</Ice.ConnectionIdleTime>
+	 	<Ice.TCP.RcvSize>65535</Ice.TCP.RcvSize>
+	 	<Ice.TCP.SndSize>65535</Ice.TCP.SndSize> 
+	 	<server.adapter_id>rpc_proxy_adapter</server.adapter_id>
+	 	<server.export_endpoint>default -p 7080</server.export_endpoint>
+	 	<server.access_control>false</server.access_control>
+	 	<!-- 可访问控制列表 多个配置以;号分隔 -->
+	 	<server.access_servers>192.168.1.35:false</server.access_servers>
+	 </component_server>
+	 
+	 <!-- ehcache 配置属性 -->
+	 <ehcache>
+	 	<cache_max_elements>100000</cache_max_elements>
+	 	<overflow_to_disk>false</overflow_to_disk>
+	 	<eternal>false</eternal>
+	 	<memory_store_eviction_policy>LRU</memory_store_eviction_policy>
+	 	<time_to_live_seconds>60</time_to_live_seconds>
+	 	<time_to_idle_seconds>30</time_to_idle_seconds>
+	 	<disk_persistent>false</disk_persistent>
+	 	<disk_expiry_thread_interval_seconds>0</disk_expiry_thread_interval_seconds>
+	 	<max_elements_in_memory>1000000</max_elements_in_memory>
+	 	<max_elements_on_disk>0</max_elements_on_disk>
+	 	<disk_spool_buffer_size_mb>8</disk_spool_buffer_size_mb>
+	 	<disk_store_path></disk_store_path>
+	 </ehcache>
+	</fw_lib_config>
+</config>

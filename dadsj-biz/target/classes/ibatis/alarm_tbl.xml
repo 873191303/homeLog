@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="alarm_tbl">
+
+	<insert id="add" parameterClass="_hashmap">
+		INSERT INTO alarm_tbl (
+		time,serviceip,major,manufactor,devicetype,title,manufactorid,alarmlevel,describe,other,col1
+		)
+		VALUES(
+		#time:TIMESTAMP#,#serviceip#,#major#,#manufactor#,#devicetype#,#title#,#manufactorid#,#alarmlevel#,#describe#,#other#,#col1#
+		)
+	</insert>
+	
+		<update id="update"  parameterClass="_hashmap">
+		update alarm_tbl
+		 <dynamic prepend="SET">  
+			<isNotEmpty property="col1" prepend=","><![CDATA[ col1 = #col1# ]]></isNotEmpty>  
+			<isNotEmpty property="title" prepend=","><![CDATA[ title = #title# ]]></isNotEmpty> 
+			<isNotEmpty property="describe" prepend=","><![CDATA[ describe = #describe# ]]></isNotEmpty> 
+			<isNotEmpty property="major" prepend=","><![CDATA[ major = #major# ]]></isNotEmpty>
+			<isNotEmpty property="time" prepend=","><![CDATA[ time = #time:TIMESTAMP# ]]></isNotEmpty>
+			<isNotEmpty property="devicetype" prepend=","><![CDATA[ devicetype = #devicetype# ]]></isNotEmpty>
+	    </dynamic>
+	     <dynamic prepend="WHERE">  
+	        manufactorid = #manufactorid#  and serviceip = #serviceip# 
+	    </dynamic>  
+	    </update>
+	    
+
+
+
+
+	<select id="getSum" parameterClass="_hashmap"
+		resultClass="Integer">
+		select count(*) from alarm_tbl
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="serviceip" prepend="and"><![CDATA[ serviceip = #serviceip# ]]></isNotEmpty>
+			<isNotEmpty property="title" prepend="and"><![CDATA[ title like concat('%', #title#, '%') ]]></isNotEmpty>
+		</dynamic>
+	</select>
+	<select id="getSumbs" parameterClass="_hashmap"
+		resultClass="Integer">
+		select count(*) from alarm_tbl
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="serviceip" prepend="and"><![CDATA[ serviceip = #serviceip# ]]></isNotEmpty>
+			<isNotEmpty property="title" prepend="and"><![CDATA[ title = #title# ]]></isNotEmpty>
+			<isNotEmpty property="title2" prepend="or"><![CDATA[ title = #title2# ]]></isNotEmpty>
+		</dynamic>
+	</select>
+	<select id="getSumFile" parameterClass="_hashmap"
+		resultClass="Integer">
+		select count(*) from alarm_tbl
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="serviceip" prepend="and"><![CDATA[ serviceip = #serviceip# ]]></isNotEmpty>
+			<isNotEmpty property="title1" prepend="and"><![CDATA[ title = #title1# ]]></isNotEmpty>
+			<isNotEmpty property="title2" prepend="or"><![CDATA[ title = #title2# ]]></isNotEmpty>
+			<isNotEmpty property="title3" prepend="or"><![CDATA[ title = #title3# ]]></isNotEmpty>
+			<isNotEmpty property="title4" prepend="or"><![CDATA[ title = #title4# ]]></isNotEmpty>
+			<isNotEmpty property="title5" prepend="or"><![CDATA[ title = #title5# ]]></isNotEmpty>
+			<isNotEmpty property="title6" prepend="or"><![CDATA[ title = #title6# ]]></isNotEmpty>
+			<isNotEmpty property="title7" prepend="or"><![CDATA[ title = #title7# ]]></isNotEmpty>
+			<isNotEmpty property="title8" prepend="or"><![CDATA[ title = #title8# ]]></isNotEmpty>
+			<isNotEmpty property="title9" prepend="or"><![CDATA[ title = #title9# ]]></isNotEmpty>
+			<isNotEmpty property="title10" prepend="or"><![CDATA[ title = #title10# ]]></isNotEmpty>
+			<isNotEmpty property="title11" prepend="or"><![CDATA[ title = #title11# ]]></isNotEmpty>
+		</dynamic>
+	</select>
+	<select id="getSumSFTP" parameterClass="_hashmap"
+		resultClass="Integer">
+		select count(*) from alarm_tbl
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="serviceip" prepend="and"><![CDATA[ serviceip = #serviceip# ]]></isNotEmpty>
+			<isNotEmpty property="title1" prepend="and"><![CDATA[ title = #title1# ]]></isNotEmpty>
+			<isNotEmpty property="title2" prepend="or"><![CDATA[ title = #title2# ]]></isNotEmpty>
+			<isNotEmpty property="title3" prepend="or"><![CDATA[ title = #title3# ]]></isNotEmpty>
+			<isNotEmpty property="title4" prepend="or"><![CDATA[ title = #title4# ]]></isNotEmpty>
+			<isNotEmpty property="title5" prepend="or"><![CDATA[ title = #title5# ]]></isNotEmpty>
+			<isNotEmpty property="title6" prepend="or"><![CDATA[ title = #title6# ]]></isNotEmpty>
+			<isNotEmpty property="title7" prepend="or"><![CDATA[ title = #title7# ]]></isNotEmpty>
+			<isNotEmpty property="title8" prepend="or"><![CDATA[ title = #title8# ]]></isNotEmpty>
+		</dynamic>
+	</select>
+	<select id="selectFile" parameterClass="_hashmap"
+		resultClass="_hashmap">
+		select * from alarm_tbl
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="serviceip" prepend="and"><![CDATA[ serviceip = #serviceip# ]]></isNotEmpty>
+			<isNotEmpty property="title1" prepend="and"><![CDATA[ title = #title1# ]]></isNotEmpty>
+			<isNotEmpty property="title2" prepend="or"><![CDATA[ title = #title2# ]]></isNotEmpty>
+			<isNotEmpty property="title3" prepend="or"><![CDATA[ title = #title3# ]]></isNotEmpty>
+			<isNotEmpty property="title4" prepend="or"><![CDATA[ title = #title4# ]]></isNotEmpty>
+			<isNotEmpty property="title5" prepend="or"><![CDATA[ title = #title5# ]]></isNotEmpty>
+			<isNotEmpty property="title6" prepend="or"><![CDATA[ title = #title6# ]]></isNotEmpty>
+			<isNotEmpty property="title7" prepend="or"><![CDATA[ title = #title7# ]]></isNotEmpty>
+			<isNotEmpty property="title8" prepend="or"><![CDATA[ title = #title8# ]]></isNotEmpty>
+			<isNotEmpty property="title9" prepend="or"><![CDATA[ title = #title9# ]]></isNotEmpty>
+			<isNotEmpty property="title10" prepend="or"><![CDATA[ title = #title10# ]]></isNotEmpty>
+			<isNotEmpty property="title11" prepend="or"><![CDATA[ title = #title11# ]]></isNotEmpty>
+		</dynamic>
+				order by time desc
+		<dynamic prepend="limit">
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+					#pageSum# OFFSET #pageIndex#
+				</isNotEmpty>
+			</isNotEmpty>
+		</dynamic>
+	</select>
+
+	<select id="getList" parameterClass="_hashmap"
+		resultClass="_hashmap">
+		select * from alarm_tbl
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="serviceip" prepend="and"><![CDATA[ serviceip = #serviceip# ]]></isNotEmpty>
+			<isNotEmpty property="title" prepend="and"><![CDATA[ title like concat('%', #title#, '%') ]]></isNotEmpty>
+			<isNotEmpty property="manufactorid" prepend="and"><![CDATA[ manufactorid = #manufactorid# ]]></isNotEmpty>
+		</dynamic>
+		order by time desc
+		<dynamic prepend="limit">
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+					#pageSum# OFFSET #pageIndex#
+				</isNotEmpty>
+			</isNotEmpty>
+		</dynamic>
+	</select>
+
+	<select id="selectbs" parameterClass="_hashmap"
+		resultClass="_hashmap">
+		select * from alarm_tbl
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="serviceip" prepend="and"><![CDATA[ serviceip = #serviceip# ]]></isNotEmpty>
+			<isNotEmpty property="title" prepend="and"><![CDATA[ title = #title# ]]></isNotEmpty>
+			<isNotEmpty property="title2" prepend="or"><![CDATA[ title = #title2# ]]></isNotEmpty>
+		</dynamic>
+		order by time desc
+		<dynamic prepend="limit">
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+					#pageSum# OFFSET #pageIndex#
+				</isNotEmpty>
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	<select id="selectSFTP" parameterClass="_hashmap"
+		resultClass="_hashmap">
+		select * from alarm_tbl
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="serviceip" prepend="and"><![CDATA[ serviceip = #serviceip# ]]></isNotEmpty>
+			<isNotEmpty property="title1" prepend="and"><![CDATA[ title = #title1# ]]></isNotEmpty>
+			<isNotEmpty property="title2" prepend="or"><![CDATA[ title = #title2# ]]></isNotEmpty>
+			<isNotEmpty property="title3" prepend="or"><![CDATA[ title = #title3# ]]></isNotEmpty>
+			<isNotEmpty property="title4" prepend="or"><![CDATA[ title = #title4# ]]></isNotEmpty>
+			<isNotEmpty property="title5" prepend="or"><![CDATA[ title = #title5# ]]></isNotEmpty>
+			<isNotEmpty property="title6" prepend="or"><![CDATA[ title = #title6# ]]></isNotEmpty>
+			<isNotEmpty property="title7" prepend="or"><![CDATA[ title = #title7# ]]></isNotEmpty>
+			<isNotEmpty property="title8" prepend="or"><![CDATA[ title = #title8# ]]></isNotEmpty>
+		</dynamic>
+		order by time desc
+		<dynamic prepend="limit">
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+					#pageSum# OFFSET #pageIndex#
+				</isNotEmpty>
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+		<select id="select" parameterClass="_hashmap"
+		resultClass="_hashmap">
+		select * from alarm_tbl
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="serviceip" prepend="and"><![CDATA[ serviceip = #serviceip# ]]></isNotEmpty>
+			<isNotEmpty property="manufactorid" prepend="and"><![CDATA[ manufactorid = #manufactorid# ]]></isNotEmpty>
+		</dynamic>
+		order by time desc
+	</select>
+	
+	
+
+
+
+	<delete id="delete" parameterClass="_hashMap">
+		delete from alarm_tbl
+	</delete>
+
+
+</sqlMap>

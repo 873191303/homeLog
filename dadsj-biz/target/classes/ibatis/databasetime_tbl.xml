@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="databasetime_tbl">
+	
+	
+	
+	<update id="update"  parameterClass="_hashmap">
+		update databasetime_tbl
+		 <dynamic prepend="SET">  
+            <isNotEmpty property="time" prepend=","><![CDATA[ time = #time# ]]></isNotEmpty>  
+	    </dynamic>
+	     <dynamic prepend="WHERE">
+	       <isNotEmpty property="id"  prepend="and"><![CDATA[ id = #id# ]]></isNotEmpty>  
+           <isNotEmpty property="type"  prepend="and"><![CDATA[ type = #type# ]]></isNotEmpty> 
+	    </dynamic>  
+	</update>
+	<select id="getList" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from databasetime_tbl
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				#pageSum# OFFSET #pageIndex#  
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+		<select id="slebytype" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from databasetime_tbl
+		<dynamic prepend="WHERE">
+		<isNotEmpty property="type" prepend="and"><![CDATA[ type = #type# ]]></isNotEmpty> 
+		</dynamic>
+	</select>
+	
+
+</sqlMap>

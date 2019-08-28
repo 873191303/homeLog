@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="error_login_tbl">
+	
+	<insert id="add" parameterClass="_hashmap">
+	 INSERT INTO error_login_tbl (
+	 time,username,password,reason,outip,serviceip,other
+	 )
+	 VALUES(
+	 #time:TIMESTAMP#,#username#,#password#,#reason#,#outip#,#serviceip#,#other#
+	 )
+	</insert>
+	
+	
+	
+	<select id="getSum" parameterClass="_hashmap" resultClass="Integer">
+		select count(*) from error_login_tbl 
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="username" prepend="and"><![CDATA[ username = #username# ]]></isNotEmpty>  
+	 	</dynamic>
+	</select>
+	
+	
+	<select id="getList" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from error_login_tbl
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="username" prepend="and"><![CDATA[ username = #username# ]]></isNotEmpty>  
+	 	</dynamic>
+	  	order by time desc
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				#pageSum# OFFSET #pageIndex#  
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	
+	
+	<delete id="delete" parameterClass="_hashMap">
+		delete from error_login_tbl
+	</delete>
+	
+
+</sqlMap>

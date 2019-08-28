@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="t_j_a_role_resources">
+	 
+	<select id="getARoleResourcesList" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from t_j_a_role_resources 
+	</select> 
+	
+		<select id = "getResourcesListByIds" resultClass="_hashmap">
+	 select * from t_j_a_role_resources  where roleid in
+		<iterate  conjunction="," open="(" close=")"  property="ids" >
+		   #ids[]#
+		</iterate> 
+	</select>
+	<insert id="add"  parameterClass="_hashmap">
+		INSERT INTO t_j_a_role_resources (
+			id,roleid,resourcesid, 
+			createtime,updatetime)
+		VALUES(
+			#id#,#roleId#,#resourcesId#, 
+			#createTime:TIMESTAMP#,#updateTime:TIMESTAMP#)  
+	</insert>
+	<update id="update"  parameterClass="_hashmap">
+		update t_j_a_role_resources
+		 <dynamic prepend="SET">  
+                <isNotEmpty property="roleId" prepend=","><![CDATA[ roleid = #roleId# ]]></isNotEmpty>  
+				<isNotEmpty property="resourcesId" prepend=","><![CDATA[ resourcesid = #resourcesId# ]]></isNotEmpty>  
+				<isNotEmpty property="updateTime" prepend=","><![CDATA[ updatetime = #updateTime:TIMESTAMP# ]]></isNotEmpty>  
+	    </dynamic>
+	     <dynamic prepend="WHERE">  
+	        id = #id#  
+	    </dynamic>  
+	</update>
+	
+	<delete id="delete" parameterClass="_hashmap">
+		delete from t_j_a_role_resources where id = #id#
+		<!-- <iterate  conjunction="or" open="(" close=")"  property="ids" >
+		  id=#ids[]#
+		</iterate>  -->
+	</delete> 
+	
+    <delete id="deleteByrole" parameterClass="_hashmap">
+		delete from t_j_a_role_resources where roleid = #roleId#
+	</delete> 
+	 
+</sqlMap>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="t_j_user">
+	
+	<insert id="add" parameterClass="_hashmap">
+	 INSERT INTO t_j_user (
+	 userid,userpassword,city,creator,mobile,email,createtime,updatetime
+	 )
+	 VALUES(
+	 #userId#,#userPassword#,#city#,#creator#,#mobile#,#email#,#createTime:TIMESTAMP#,#updateTime:TIMESTAMP#
+	 )
+	</insert>
+	
+	
+	<update id="updateUser"  parameterClass="_hashmap">
+		update t_j_user
+		 <dynamic prepend="SET">  
+                <isNotEmpty property="userId" prepend=","><![CDATA[ userid = #userId# ]]></isNotEmpty>  
+				<isNotEmpty property="userPassword" prepend=","><![CDATA[ userpassword = #userPassword# ]]></isNotEmpty>  
+				<isNotEmpty property="city" prepend=","><![CDATA[ city = #city# ]]></isNotEmpty>  
+				<isNotEmpty property="mobile" prepend=","><![CDATA[ mobile = #mobile# ]]></isNotEmpty>
+				<isNotEmpty property="email" prepend=","><![CDATA[ email = #email# ]]></isNotEmpty>  
+				<isNotEmpty property="updateTime" prepend=","><![CDATA[ updatetime = #updateTime:TIMESTAMP# ]]></isNotEmpty>  
+	    </dynamic>
+	     <dynamic prepend="WHERE">  
+	        userid = #userId#  
+	    </dynamic>  
+	</update>
+	
+	
+	
+	
+	
+	
+	<select id="getSum" parameterClass="_hashmap" resultClass="Integer">
+		select count(*) from t_j_user 
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="userId" prepend=","><![CDATA[ userid = #userId# ]]></isNotEmpty>  
+        <isNotEmpty property="city" prepend=","><![CDATA[ city = #city# ]]></isNotEmpty>
+	 	</dynamic>
+	</select>
+	
+	<select id="getUserById" parameterClass="_hashmap" resultClass="_hashmap">
+	 select * from t_j_user where userid = #userId# 
+	</select>
+	
+    <select id="getUserAll" parameterClass="_hashmap" resultClass="_hashmap">
+	 select * from t_j_user
+	</select>
+	
+    <select id="getUserByIds" parameterClass="_hashmap" resultClass="List">
+	 select * from t_j_user where userid in 
+       <iterate open="(" close=")" conjunction="," > 
+           #ids# 
+       </iterate> 
+	 
+	</select>
+	
+	<select id="getUserList" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from t_j_user
+		<dynamic prepend="WHERE">
+                <isNotEmpty property="userId" prepend=","><![CDATA[ userid = #userId# ]]></isNotEmpty>  
+				<isNotEmpty property="city" prepend=","><![CDATA[ city = #city# ]]></isNotEmpty>  
+	 	</dynamic>
+	  	order by updatetime desc
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				 #pageSum# OFFSET #pageIndex# 
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<delete id="deleteUserById" parameterClass="_hashMap">
+		delete from t_j_user where userid = #id#
+	</delete>
+	
+
+</sqlMap>

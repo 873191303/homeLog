@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util
+END
+DateUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/DateUtil.java
+END
+JitvGuidUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/JitvGuidUtil.java
+END
+TaobaoAPI.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/TaobaoAPI.java
+END
+MemcachedKeys.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/MemcachedKeys.java
+END
+StaticClass.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dabigdata/!svn/ver/304/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/StaticClass.java
+END
+Message.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/Message.java
+END
+UpLoadUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/UpLoadUtil.java
+END
+SecurityUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/SecurityUtil.java
+END
+ObjectUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/ObjectUtil.java
+END
+JedisPoolManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/JedisPoolManager.java
+END
+RedisUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/RedisUtil.java
+END
+StringToDateUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/StringToDateUtil.java
+END
+TouTiaoVideoParseUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/TouTiaoVideoParseUtils.java
+END
+LinuxHardware.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/LinuxHardware.java
+END
+ExcelUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/ExcelUtils.java
+END
+MemcachedUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/MemcachedUtils.java
+END
+Action.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/Action.java
+END
+CrawlerUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/CrawlerUtil.java
+END
+RedisQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/RedisQueue.java
+END
+WebUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/WebUtil.java
+END
+ErrorCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/dabigdata/!svn/ver/307/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/ErrorCode.java
+END
+ExecutorUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/ExecutorUtil.java
+END
+PinyinToolkit.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/PinyinToolkit.java
+END
+PropertiesJitv.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/PropertiesJitv.java
+END
+ListUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/ListUtils.java
+END
+Md5Utils.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/Md5Utils.java
+END
+PictureUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/PictureUtils.java
+END
+FstData.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/FstData.java
+END
+RandomHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/dabigdata/!svn/ver/274/dadsj/dadsj-biz/src/main/java/com/jitv/tv/util/RandomHelper.java
+END

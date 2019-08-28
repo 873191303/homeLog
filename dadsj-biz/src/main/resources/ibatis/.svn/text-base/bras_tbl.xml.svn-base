@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="bras_tbl">
+	
+	<insert id="add" parameterClass="_hashmap">
+	 INSERT INTO bras_tbl (
+	 ip,name,account,time,manufactor,city,count
+	 )
+	 VALUES(
+	 #ip#,#name#,#account#,#time:TIMESTAMP#,#manufactor#,#city#,#count#
+	 )
+	</insert>
+	
+	
+	<update id="update"  parameterClass="_hashmap">
+		update bras_tbl
+		 <dynamic prepend="SET">  
+            <isNotEmpty property="count" prepend=","><![CDATA[ count = #count# ]]></isNotEmpty>  
+	    </dynamic>
+	     <dynamic prepend="WHERE">
+	       <isNotEmpty property="ip"  prepend="and"><![CDATA[ ip = #ip# ]]></isNotEmpty>  
+           <isNotEmpty property="time"  prepend="and"><![CDATA[ time = #time:TIMESTAMP# ]]></isNotEmpty> 
+	    </dynamic>  
+	</update>
+	
+	<select id="getSum" parameterClass="_hashmap" resultClass="Integer">
+		select count(*) from bras_tbl 
+		<dynamic prepend="WHERE">
+		<isNotEmpty property="ip" prepend="and"><![CDATA[ ip = #ip# ]]></isNotEmpty>  
+		<isNotEmpty property="name" prepend="and"><![CDATA[ name like concat('%', #name#, '%') ]]></isNotEmpty>
+        <isNotEmpty property="startTime" prepend="and"><![CDATA[ time >= #startTime:TIMESTAMP# ]]></isNotEmpty>  
+        <isNotEmpty property="endTime" prepend="and"><![CDATA[ time <= #endTime:TIMESTAMP# ]]></isNotEmpty>  
+	 	</dynamic>
+	</select>
+	<select id="getList" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from bras_tbl
+		<dynamic prepend="WHERE">
+		<isNotEmpty property="ip" prepend="and"><![CDATA[ ip = #ip# ]]></isNotEmpty>  
+		<isNotEmpty property="name" prepend="and"><![CDATA[ name like concat('%', #name#, '%') ]]></isNotEmpty>
+        <isNotEmpty property="startTime" prepend="and"><![CDATA[ time >= #startTime:TIMESTAMP# ]]></isNotEmpty>  
+        <isNotEmpty property="endTime" prepend="and"><![CDATA[ time <= #endTime:TIMESTAMP# ]]></isNotEmpty>  
+        </dynamic>
+	  	order by time desc
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				#pageSum# OFFSET #pageIndex#
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="getbras" parameterClass="_hashmap" resultClass="_hashmap">
+		select * from bras_tbl
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="ip"  prepend="and"><![CDATA[ ip = #ip# ]]></isNotEmpty>  
+        <isNotEmpty property="time"  prepend="and"><![CDATA[ time = #time:TIMESTAMP# ]]></isNotEmpty>  
+	 	</dynamic>
+	</select>
+	
+	
+	<delete id="delete" parameterClass="_hashMap">
+		delete from bras_tbl
+	</delete>
+	
+
+</sqlMap>

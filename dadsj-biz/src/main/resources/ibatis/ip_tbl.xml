@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="ip_tbl">
+	
+	<insert id="add" parameterClass="_hashmap">
+	 INSERT INTO ip_tbl (
+	 ip,city,create_time,update_time,other,col
+	 )
+	 VALUES(
+	 #ip#,#city#,#createTime:TIMESTAMP#,#updateTime:TIMESTAMP#,#other#,#COL#
+	 )
+	</insert>
+	
+	
+	<update id="update"  parameterClass="_hashmap">
+		update ip_tbl
+		 <dynamic prepend="SET">  
+                <isNotEmpty property="ip" prepend=","><![CDATA[ ip = #ip# ]]></isNotEmpty>  
+				<isNotEmpty property="city" prepend=","><![CDATA[ city = #city# ]]></isNotEmpty>  
+				<isNotEmpty property="updateTime" prepend=","><![CDATA[ update_time = #updateTime:TIMESTAMP# ]]></isNotEmpty> 
+				<isNotEmpty property="other" prepend=","><![CDATA[ other = #other# ]]></isNotEmpty>  
+				<isNotEmpty property="COL" prepend=","><![CDATA[ col = #COL# ]]></isNotEmpty>  
+	    </dynamic>
+	     <dynamic prepend="WHERE">  
+	        id = #id#  
+	    </dynamic>  
+	</update>
+	
+	<select id="getSum" parameterClass="_hashmap" resultClass="Integer">
+		select count(*) from ip_tbl 
+		<dynamic prepend="WHERE">
+        <isNotEmpty property="ip" prepend=","><![CDATA[ ip = #ip# ]]></isNotEmpty>  
+        <isNotEmpty property="city" prepend=","><![CDATA[ city = #city# ]]></isNotEmpty>
+	 	</dynamic>
+	</select>
+	
+	<select id="getById" parameterClass="_hashmap" resultClass="_hashmap">
+	 select  id,ip,city,create_time as createTime,update_time as updateTime,other,col from ip_tbl where id = #id# 
+	</select>
+	
+	
+	<select id="getList" parameterClass="_hashmap" resultClass="_hashmap">
+		select  id,ip,city,create_time as createTime,update_time as updateTime,other,col from ip_tbl
+		<dynamic prepend="WHERE">
+                <isNotEmpty property="ip" prepend=","><![CDATA[ ip = #ip# ]]></isNotEmpty>  
+				<isNotEmpty property="city" prepend=","><![CDATA[ city = #city# ]]></isNotEmpty>  
+	 	</dynamic>
+	  	order by update_time desc
+		<dynamic prepend="limit">  
+			<isNotEmpty property="pageIndex">
+				<isNotEmpty property="pageSum">
+				 #pageSum# OFFSET #pageIndex#  
+				</isNotEmpty> 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+		<select id="getIP" parameterClass="_hashmap" resultClass="_hashmap">
+		select  id,ip,city,create_time as createTime,update_time as updateTime,other,col from ip_tbl
+		<dynamic prepend="WHERE">
+		<isNotEmpty property="city" prepend=","><![CDATA[ city = #city# ]]></isNotEmpty>  
+	 	</dynamic>
+	  	order by update_time desc
+	</select>
+	
+	<delete id="delete" parameterClass="_hashMap">
+		delete from ip_tbl where id = #id#
+	</delete>
+	
+
+</sqlMap>
